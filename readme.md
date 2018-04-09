@@ -3,7 +3,7 @@
 <p>
   boilerplate schemas to support quick implementation 
   of <a href="https://www.graphile.org/postgraphile/">postgraphile</a> projects
-  using <a href="http://sqitch.org/">sqitch</a> to manage migrations
+  using <a href="http://sqitch.org/">sqitch</a> to manage db scripts
 </p>
 
 basic packages include:
@@ -21,6 +21,10 @@ basic packages include:
   
 
 ## usage ##
+install <a href="http://sqitch.org/">sqitch</a>
+
+install <a href="https://www.graphile.org/postgraphile/">postgraphile</a>
+
 clone the repo:  
 ```$xslt
 git clone https://github.com/stlbucket/sqitch-phile.git
@@ -29,7 +33,7 @@ git on in there:
 ```$xslt
 cd sqitch-phile
 ```
-clean out the .git dir
+clean out the .git dir:
 ```$xslt
 rm -rf .git
 ```
@@ -43,15 +47,22 @@ configure your environment:
 ./cmd/target.sh [your_db_name] db:pg:[your_db_name]
 ./cmd/engine.sh [your_db_name]
 ```
-deploy
+deploy:
 ```$xslt
 ./cmd/deploy.sh
 ```
-revert
+revert:
 ```$xslt
 ./cmd/revert.sh
 ```
-verify
+verify:
 ```$xslt
 ./cmd/verify.sh
+```
+
+work on your schemas the sqitch way
+
+when you're ready to release, tag it:
+```$xslt
+./cmd/tag.sh [tag-name] -n '[tag-message]'
 ```
