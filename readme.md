@@ -24,6 +24,9 @@ basic packages include:
 install <a href="http://sqitch.org/">sqitch</a>
 
 install <a href="https://www.graphile.org/postgraphile/">postgraphile</a>
+```$xslt
+npm install -g postgraphile
+```
 
 clone the repo:  
 ```$xslt
