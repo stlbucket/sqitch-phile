@@ -69,7 +69,7 @@ verify:
 ./cmd/verify.sh
 ```
 
-work on your schemas the sqitch way
+work on your schemas the <a href="https://metacpan.org/pod/sqitchtutorial">sqitch way</a>
 
 when you're ready to release, tag it:
 ```$xslt
