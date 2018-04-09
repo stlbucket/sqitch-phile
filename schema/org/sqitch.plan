@@ -5,5 +5,6 @@
 structure/schema 2018-04-08T22:29:21Z Kevin Burkett <kevin.burkett@soro.biz> # Add schema for org
 structure/location [structure/schema] 2018-04-09T02:55:41Z Kevin Burkett <kevin.burkett@soro.biz> # Add location table
 structure/organization [structure/location] 2018-04-09T17:43:12Z Kevin Burkett <stlbucket@gmail.com> # any kind of organization
-structure/contact [structure/organization] 2018-04-09T17:54:35Z Kevin Burkett <stlbucket@gmail.com> # a contact of any kind
 @v1.0.0-dev1 2018-04-09T18:04:30Z Kevin Burkett <stlbucket@gmail.com> # Tag v1.0.0-dev1.
+
+structure/contact [structure/organization structure/location auth:structure/app_user] 2018-04-09T19:05:15Z Kevin Burkett <stlbucket@gmail.com> # any kind of contact
