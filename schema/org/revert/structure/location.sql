@@ -2,6 +2,6 @@
 
 BEGIN;
 
-DROP TABLE IF EXISTS org  .location CASCADE;
+DROP TABLE IF EXISTS org.location CASCADE;
 
 COMMIT;

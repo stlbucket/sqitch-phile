@@ -2,6 +2,8 @@
 %project=auth
 %uri=https://wa.soro.biz/auth
 
-structure/roles 2018-04-09T03:25:03Z Kevin Burkett <stlbucket@gmail.com> # fbkt_roles
 structure/extensions 2018-04-09T03:45:17Z Kevin Burkett <stlbucket@gmail.com> # uuid and pgcrypto extensions
-structure/schema [structure/roles structure/extensions] 2018-04-09T03:48:01Z Kevin Burkett <stlbucket@gmail.com> # auth schema
+structure/schema [structure/extensions] 2018-04-09T03:48:01Z Kevin Burkett <stlbucket@gmail.com> # auth schema
+custom-type/permission-key [structure/schema] 2018-04-09T04:17:42Z Kevin Burkett <stlbucket@gmail.com> # auth permission key for user type
+structure/app_user [custom-type/permission-key] 2018-04-09T04:46:21Z Kevin Burkett <stlbucket@gmail.com> # enabled app users
+@v1.0.0-dev1 2018-04-09T18:04:44Z Kevin Burkett <stlbucket@gmail.com> # Tag v1.0.0-dev1.
