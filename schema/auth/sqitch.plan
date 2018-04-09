@@ -2,3 +2,6 @@
 %project=auth
 %uri=https://wa.soro.biz/auth
 
+structure/roles 2018-04-09T03:25:03Z Kevin Burkett <stlbucket@gmail.com> # fbkt_roles
+structure/extensions 2018-04-09T03:45:17Z Kevin Burkett <stlbucket@gmail.com> # uuid and pgcrypto extensions
+structure/schema [structure/roles structure/extensions] 2018-04-09T03:48:01Z Kevin Burkett <stlbucket@gmail.com> # auth schema
