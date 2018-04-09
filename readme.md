@@ -40,6 +40,12 @@ clean out the .git dir:
 ```$xslt
 rm -rf .git
 ```
+init your git:
+```$xslt
+git init
+git add .
+git commit -am 'init commit'
+```
 create a database:
 ```$xslt
 createdb [your_db_name]
