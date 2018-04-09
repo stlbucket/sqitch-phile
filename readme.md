@@ -1,6 +1,10 @@
 # sqitch-phile #
 
-boilerplate schemas to support quick implementation of <a href="https://www.graphile.org/postgraphile/">postgraphile</a> projects
+<p>
+  boilerplate schemas to support quick implementation 
+  of <a href="https://www.graphile.org/postgraphile/">postgraphile</a> projects
+  using <a href="http://sqitch.org/">sqitch</a> to manage migrations
+</p>
 
 basic packages include:
 - app-roles: 
@@ -15,18 +19,30 @@ basic packages include:
   - org.contact ==> auth.app_user
   - requires auth
   
-  
-scripts/deploy.sh:
 
+## usage ##
+clone the repo:  
 ```$xslt
-#!/usr/bin/env bash
-
-(cd ./schema/app-roles/ && sqitch deploy $1)
-(cd ./schema/auth/ && sqitch deploy $1)
-(cd ./schema/org/ && sqitch deploy $1)
+git clone https://github.com/stlbucket/sqitch-phile.git
 ```
 
-
-is this a good way to manage multiple schemas with sqitch?
-
-is there a better way to manage multiple 'sqitchlets' together at one time directly with sqitch.conf files?
+get on in there:
+```$xslt
+cd sqitch-phile
+```
+create a database:
+```$xslt
+createdb phile
+```
+configure your environment:
+```$xslt
+configure your env
+```
+deploy
+```$xslt
+./deploy.sh
+```
+revert
+```$xslt
+./revert.sh
+```
