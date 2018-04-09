@@ -66,3 +66,8 @@ when you're ready to release, tag it:
 ```$xslt
 ./cmd/tag.sh [tag-name] -n '[tag-message]'
 ```
+
+assuming you've got postgraphile installed globally:
+```$xslt
+./cmd/server.sh
+```
