@@ -7,3 +7,4 @@ structure/schema [structure/extensions app-roles:roles] 2018-04-09T03:48:01Z Kev
 custom-type/permission-key [structure/schema] 2018-04-09T04:17:42Z Kevin Burkett <stlbucket@gmail.com> # auth permission key for user type
 structure/app_user [custom-type/permission-key] 2018-04-09T04:46:21Z Kevin Burkett <stlbucket@gmail.com> # enabled app users
 @v1.0.0-dev1 2018-04-09T18:04:44Z Kevin Burkett <stlbucket@gmail.com> # Tag v1.0.0-dev1.
+@v1.0.2 2018-04-09T22:38:34Z Kevin Burkett <stlbucket@gmail.com> # v1.0.2
