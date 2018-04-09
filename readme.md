@@ -29,4 +29,4 @@ scripts/deploy.sh:
 
 is this a good way to manage multiple schemas with sqitch?
 
-is there a way to manage multiple 'sqitchlets' together at one time?
+is there a better way to manage multiple 'sqitchlets' together at one time directly with sqitch.conf files?
