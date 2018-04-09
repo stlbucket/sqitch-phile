@@ -25,24 +25,33 @@ clone the repo:
 ```$xslt
 git clone https://github.com/stlbucket/sqitch-phile.git
 ```
-
-get on in there:
+git on in there:
 ```$xslt
 cd sqitch-phile
 ```
+clean out the .git dir
+```$xslt
+rm -rf .git
+```
 create a database:
 ```$xslt
-createdb phile
+createdb [your_db_name]
 ```
 configure your environment:
 ```$xslt
-configure your env
+./cmd/init.sh
+./cmd/target.sh [your_db_name] db:pg:[your_db_name]
+./cmd/engine.sh [your_db_name]
 ```
 deploy
 ```$xslt
-./deploy.sh
+./cmd/deploy.sh
 ```
 revert
 ```$xslt
-./revert.sh
+./cmd/revert.sh
+```
+verify
+```$xslt
+./cmd/verify.sh
 ```
