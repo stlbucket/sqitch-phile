@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source ./cmd.config
+
 echo ""
 echo ""
 echo "CONFIGURING SQITCH TARGET"
