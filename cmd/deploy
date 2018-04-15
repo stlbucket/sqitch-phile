@@ -1,10 +1,15 @@
 #!/usr/bin/env bash
 
-(cd ./schema/app-roles/ && sqitch deploy "$@")
-(cd ./schema/auth/ && sqitch deploy "$@")
-(cd ./schema/auth_fn/ && sqitch deploy "$@")
-(cd ./schema/org/ && sqitch deploy "$@")
-(cd ./schema/org_fn/ && sqitch deploy "$@")
+source ./cmd.config
 
+echo ""
+echo ""
+echo "DEPLOYING TO HOST:" $hostname
+echo "DEPLOYING TO DATABASE: " $database
+echo ""
 
-(cd ./core-data/ && sqitch deploy "$@")
+for i in ${packages[@]};
+do
+  echo "DEPLOYING PACKAGE ------------------------------------------------------------" $i
+  (cd ./"$i"/ && sqitch deploy "$@")
+done

@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
-(cd ./schema/org_fn/ && sqitch target add "$@")
-(cd ./schema/org/ && sqitch target add "$@")
-(cd ./schema/auth_fn/ && sqitch target add "$@")
-(cd ./schema/auth/ && sqitch target add "$@")
-(cd ./schema/app-roles/ && sqitch target add "$@")
 
-(cd ./core-data/ && sqitch target add "$@")
+echo ""
+echo ""
+echo "CONFIGURING SQITCH TARGET"
+echo ""
+
+for i in ${packages[@]};
+do
+  echo "CONFIGURING PACKAGE ------------------------------------------------------------" $i
+  (cd ./"$i"/ && sqitch target add "$@")
+done

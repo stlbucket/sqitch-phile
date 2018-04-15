@@ -3,7 +3,7 @@
 
 BEGIN;
 
-CREATE TABLE auth.config_org (
+CREATE TABLE org.config_org (
   id uuid UNIQUE NOT NULL DEFAULT uuid_generate_v1(),
   key text,
   value text,

@@ -5,7 +5,6 @@ BEGIN;
   DROP FUNCTION IF EXISTS org_fn.build_organization(
     text
     ,text
-    ,uuid
   );
 
 COMMIT;

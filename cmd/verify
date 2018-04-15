@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
-(cd ./schema/app-roles/ && sqitch verify)
-(cd ./schema/auth/ && sqitch verify)
-(cd ./schema/auth_fn/ && sqitch verify)
-(cd ./schema/org/ && sqitch verify)
-(cd ./schema/org_fn/ && sqitch verify)
 
-(cd ./core-data/ && sqitch verify)
+echo ""
+echo ""
+echo "VERIFYING SQITCH DEPLOY"
+echo ""
+
+for i in ${packages[@]};
+do
+  echo "VERIFYING PACKAGE ------------------------------------------------------------" $i
+  (cd ./"$i"/ && sqitch verify)
+done

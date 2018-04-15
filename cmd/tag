@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
-(cd ./schema/org_fn/ && sqitch tag $1 $2 $3)
-(cd ./schema/org/ && sqitch tag $1 $2 $3)
-(cd ./schema/auth_fn/ && sqitch tag $1 $2 $3)
-(cd ./schema/auth/ && sqitch tag $1 $2 $3)
-(cd ./schema/app-roles/ && sqitch tag $1 $2 $3)
 
-(cd ./schema/core-data/ && sqitch tag $1 $2 $3)
+echo ""
+echo ""
+echo "TAGGING SQITCH PACKAGES"
+echo ""
+
+for i in ${packages[@]};
+do
+  echo "TAGGING PACKAGE ------------------------------------------------------------" $i
+  (cd ./"$i"/ && sqitch tag $1 $2 $3)
+done
 
 git commit -am $3
 git tag $1 -am $3

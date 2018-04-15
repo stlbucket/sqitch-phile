@@ -3,7 +3,7 @@
 
 BEGIN;
 
-  DROP FUNCTION IF EXISTS org_fn.built_tenant_organization(
+  DROP FUNCTION IF EXISTS org_fn.build_tenant_organization(
     text
     ,text
     ,text

@@ -20,7 +20,7 @@ basic packages include:
   - requires auth
   
 
-## usage ##
+## quick usage ##
 install <a href="http://sqitch.org/">sqitch</a>
 
 install <a href="https://www.graphile.org/postgraphile/">postgraphile</a>
@@ -69,7 +69,7 @@ verify:
 ./cmd/verify.sh
 ```
 
-work on your schemas the <a href="https://metacpan.org/pod/sqitchtutorial">sqitch way</a>
+work on your schemas individually the <a href="https://metacpan.org/pod/sqitchtutorial">sqitch way</a>
 
 when you're ready to release, tag it:
 ```$xslt
@@ -80,3 +80,4 @@ assuming you've got postgraphile installed globally:
 ```$xslt
 ./cmd/server.sh
 ```
+

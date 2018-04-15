@@ -7,7 +7,6 @@ BEGIN;
     ,text
     ,text
     ,uuid
-    ,uuid
   );
 
 COMMIT;

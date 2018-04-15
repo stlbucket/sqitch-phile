@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 
+source ./cmd.config
 
-(cd ./schema/org_fn/ && sqitch revert "$@" -y)
-(cd ./schema/org/ && sqitch revert "$@" -y)
-(cd ./schema/auth_fn/ && sqitch revert "$@" -y)
-(cd ./schema/auth/ && sqitch revert "$@" -y)
-(cd ./schema/app-roles/ && sqitch revert "$@" -y)
+echo ""
+echo ""
+echo "CONFIGURING SQITCH ENGINE"
+echo ""
 
-(cd ./core-data/ && sqitch revert "$@" -y)
+
+for (( idx=${#packages[@]}-1 ; idx>=0 ; idx-- )) ; do
+  echo "REVERTING PACKAGE ------------------------------------------------------------" ${packages[idx]}
+  (cd ./${packages[idx]}/ && sqitch revert "$@" -y)
+done

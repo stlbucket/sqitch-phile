@@ -6,7 +6,7 @@ BEGIN;
     id,
     key,
     value
-  FROM auth.config_org
+  FROM org.config_org
   WHERE FALSE;
 
 ROLLBACK;
