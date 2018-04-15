@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-postgraphile -c postgres://localhost/phile -s auth,org -j -r app_anonymous -e SUPERSECRET -t auth.jwt_token -M
+postgraphile -c postgres://localhost/phile -s auth,auth_fn,org,org_fn -j -r app_anonymous -e SUPERSECRET -t auth.jwt_token -M

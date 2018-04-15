@@ -2,7 +2,9 @@
 
 (cd ./schema/app-roles/ && sqitch deploy "$@")
 (cd ./schema/auth/ && sqitch deploy "$@")
+(cd ./schema/auth_fn/ && sqitch deploy "$@")
 (cd ./schema/org/ && sqitch deploy "$@")
+(cd ./schema/org_fn/ && sqitch deploy "$@")
 
 
 (cd ./core-data/ && sqitch deploy "$@")

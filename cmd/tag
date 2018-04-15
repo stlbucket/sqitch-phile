@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
+(cd ./schema/org_fn/ && sqitch tag $1 $2 $3)
 (cd ./schema/org/ && sqitch tag $1 $2 $3)
+(cd ./schema/auth_fn/ && sqitch tag $1 $2 $3)
 (cd ./schema/auth/ && sqitch tag $1 $2 $3)
 (cd ./schema/app-roles/ && sqitch tag $1 $2 $3)
 

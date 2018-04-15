@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
 
+(cd ./schema/org_fn/ && sqitch revert "$@" -y)
 (cd ./schema/org/ && sqitch revert "$@" -y)
+(cd ./schema/auth_fn/ && sqitch revert "$@" -y)
 (cd ./schema/auth/ && sqitch revert "$@" -y)
 (cd ./schema/app-roles/ && sqitch revert "$@" -y)
 

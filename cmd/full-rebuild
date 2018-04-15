@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
-./cmd/revert
+dropdb $1
+createdb $1
 ./cmd/deploy
 ./cmd/server
