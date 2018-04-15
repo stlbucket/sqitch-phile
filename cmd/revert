@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+
+(cd ./schema/org/ && sqitch revert "$@" -y)
+(cd ./schema/auth/ && sqitch revert "$@" -y)
+(cd ./schema/app-roles/ && sqitch revert "$@" -y)
+
+(cd ./core-data/ && sqitch revert "$@" -y)

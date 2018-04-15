@@ -1,11 +1,13 @@
 %syntax-version=1.0.0
 %project=org
-%uri=https://wa.soro.biz/
+%uri=sqitch-phile/org/
 
-structure/schema 2018-04-08T22:29:21Z Kevin Burkett <kevin.burkett@soro.biz> # Add schema for org
-structure/location [structure/schema] 2018-04-09T02:55:41Z Kevin Burkett <kevin.burkett@soro.biz> # Add location table
-structure/organization [structure/location] 2018-04-09T17:43:12Z Kevin Burkett <stlbucket@gmail.com> # any kind of organization
-@v1.0.0-dev1 2018-04-09T18:04:30Z Kevin Burkett <stlbucket@gmail.com> # Tag v1.0.0-dev1.
-
-structure/contact [structure/organization structure/location auth:structure/app_user] 2018-04-09T19:05:15Z Kevin Burkett <stlbucket@gmail.com> # any kind of contact
-@v1.0.2 2018-04-09T22:38:33Z Kevin Burkett <stlbucket@gmail.com> # v1.0.2
+structure/schema [auth:structure/schema] 2018-04-11T19:34:28Z Kevin Burkett <stlbucket@gmail.com> # org schema
+structure/location [structure/schema] 2018-04-11T19:35:12Z Kevin Burkett <stlbucket@gmail.com> # any location
+structure/organization [structure/location] 2018-04-11T19:35:32Z Kevin Burkett <stlbucket@gmail.com> # any organization
+structure/contact [structure/organization] 2018-04-11T19:35:49Z Kevin Burkett <stlbucket@gmail.com> # any contact
+function/current_app_user_contact [auth:function/current_app_user structure/contact] 2018-04-11T20:39:53Z Kevin Burkett <stlbucket@gmail.com> # get contact information for currently logged in user
+function/build_location [structure/location] 2018-04-12T01:36:41Z Kevin Burkett <stlbucket@gmail.com> # creates a location
+function/build_organization [structure/organization] 2018-04-12T01:37:12Z Kevin Burkett <stlbucket@gmail.com> # creates an organization
+function/build_contact [structure/contact] 2018-04-12T01:37:30Z Kevin Burkett <stlbucket@gmail.com> # creates a contact
+function/build_tenant_organization [function/build_organization] 2018-04-15T15:37:39Z Kevin Burkett <stlbucket@gmail.com> # build a tenant organization

@@ -1,10 +1,16 @@
 %syntax-version=1.0.0
 %project=auth
-%uri=https://wa.soro.biz/auth
+%uri=sqitch-phile/auth
 
-structure/extensions 2018-04-09T03:45:17Z Kevin Burkett <stlbucket@gmail.com> # uuid and pgcrypto extensions
-structure/schema [structure/extensions app-roles:roles] 2018-04-09T03:48:01Z Kevin Burkett <stlbucket@gmail.com> # auth schema
-custom-type/permission-key [structure/schema] 2018-04-09T04:17:42Z Kevin Burkett <stlbucket@gmail.com> # auth permission key for user type
-structure/app_user [custom-type/permission-key] 2018-04-09T04:46:21Z Kevin Burkett <stlbucket@gmail.com> # enabled app users
-@v1.0.0-dev1 2018-04-09T18:04:44Z Kevin Burkett <stlbucket@gmail.com> # Tag v1.0.0-dev1.
-@v1.0.2 2018-04-09T22:38:34Z Kevin Burkett <stlbucket@gmail.com> # v1.0.2
+structure/extensions 2018-04-11T19:23:40Z Kevin Burkett <stlbucket@gmail.com> # postgresql extensions
+structure/schema [app-roles:roles] 2018-04-11T19:25:04Z Kevin Burkett <stlbucket@gmail.com> # classic postgraphile jwt auth
+custom-type/permission-key [structure/schema] 2018-04-11T19:27:05Z Kevin Burkett <stlbucket@gmail.com> # user master permission level
+structure/config_auth [structure/schema] 2018-04-11T19:27:58Z Kevin Burkett <stlbucket@gmail.com> # key/value pairs to support config
+structure/app_tenant [structure/schema] 2018-04-11T19:28:23Z Kevin Burkett <stlbucket@gmail.com> # application tenant
+structure/app_user [structure/extensions structure/schema structure/app_tenant] 2018-04-11T19:29:23Z Kevin Burkett <stlbucket@gmail.com> # application user
+structure/token [structure/app_user] 2018-04-11T19:30:49Z Kevin Burkett <stlbucket@gmail.com> # user login token
+custom-type/jwt-token [structure/schema] 2018-04-11T20:20:17Z Kevin Burkett <stlbucket@gmail.com> # jwt token with user id and role
+function/authenticate [custom-type/jwt-token structure/app_user] 2018-04-11T20:25:39Z Kevin Burkett <stlbucket@gmail.com> # grant access via jwt
+function/current_app_user [structure/app_user custom-type/jwt-token] 2018-04-11T20:32:48Z Kevin Burkett <stlbucket@gmail.com> # get current app user
+function/build_app_tenant [structure/schema] 2018-04-12T00:48:34Z Kevin Burkett <stlbucket@gmail.com> # builds an app tenant
+function/build_app_user [structure/app_user] 2018-04-12T00:49:05Z Kevin Burkett <stlbucket@gmail.com> # creates an app_user

@@ -2,8 +2,6 @@
 
 BEGIN;
 
-DROP SCHEMA auth;
-
-
+DROP SCHEMA auth CASCADE;
 
 COMMIT;

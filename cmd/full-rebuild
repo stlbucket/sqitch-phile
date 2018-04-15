@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+./cmd/revert
+./cmd/deploy
+./cmd/server

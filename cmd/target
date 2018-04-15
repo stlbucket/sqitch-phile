@@ -2,3 +2,5 @@
 (cd ./schema/org/ && sqitch target add "$@")
 (cd ./schema/auth/ && sqitch target add "$@")
 (cd ./schema/app-roles/ && sqitch target add "$@")
+
+(cd ./core-data/ && sqitch target add "$@")

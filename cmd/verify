@@ -2,3 +2,5 @@
 (cd ./schema/app-roles/ && sqitch verify)
 (cd ./schema/auth/ && sqitch verify)
 (cd ./schema/org/ && sqitch verify)
+
+(cd ./core-data/ && sqitch verify)

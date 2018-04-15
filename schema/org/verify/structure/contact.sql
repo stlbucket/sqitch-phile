@@ -11,7 +11,8 @@ BEGIN;
     app_user_id,
     first_name,
     last_name,
-    email
+    email,
+    external_id
   FROM org.contact
   WHERE FALSE;
 

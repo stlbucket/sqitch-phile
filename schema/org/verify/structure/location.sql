@@ -6,7 +6,6 @@ SELECT
   id,
   created_at,
   updated_at,
-  created_by_location_id,
   name,
   address1,
   address2,
@@ -14,7 +13,8 @@ SELECT
   state,
   zip,
   lat,
-  lon
+  lon,
+  external_id
   FROM org.location
  WHERE FALSE;
 
