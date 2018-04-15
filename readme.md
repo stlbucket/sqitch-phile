@@ -52,32 +52,32 @@ createdb [your_db_name]
 ```
 configure your environment:
 ```$xslt
-./cmd/init.sh
-./cmd/target.sh [your_db_name] db:pg:[your_db_name]
-./cmd/engine.sh [your_db_name]
+./cmd/init
+./cmd/target [your_db_name] db:pg:[your_db_name]
+./cmd/engine [your_db_name]
 ```
 deploy:
 ```$xslt
-./cmd/deploy.sh
+./cmd/deploy
 ```
 revert:
 ```$xslt
-./cmd/revert.sh
+./cmd/revert
 ```
 verify:
 ```$xslt
-./cmd/verify.sh
+./cmd/verify
 ```
 
 work on your schemas individually the <a href="https://metacpan.org/pod/sqitchtutorial">sqitch way</a>
 
 when you're ready to release, tag it:
 ```$xslt
-./cmd/tag.sh [tag-name] -n '[tag-message]'
+./cmd/tag [tag-name] -n '[tag-message]'
 ```
 
 assuming you've got postgraphile installed globally:
 ```$xslt
-./cmd/server.sh
+./cmd/server
 ```
 
