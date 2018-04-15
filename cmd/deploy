@@ -11,5 +11,5 @@ echo ""
 for i in ${packages[@]};
 do
   echo "DEPLOYING PACKAGE ------------------------------------------------------------" $i
-  (cd ./"$i"/ && sqitch deploy "$@")
+  (cd ./"$i"/ && sqitch deploy)
 done
