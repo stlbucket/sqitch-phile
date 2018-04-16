@@ -1,6 +1,7 @@
 select
   id
   ,name
+  ,identifier
 from auth.app_tenant;
 
 select
