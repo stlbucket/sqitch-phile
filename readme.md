@@ -54,7 +54,7 @@ createdb [YOUR DATABASE NAME]
 ```$xslt
 cp cmd.config.example cmd.config
 ```
-... then set your database name in cmd.config ...
+... then set your database name in **cmd.config** ...
 ```$xslt
 #!/usr/bin/env bash
 database="[YOUR DATABASE NAME]"
@@ -98,3 +98,8 @@ assuming you've got postgraphile installed globally:
 ./cmd/server
 ```
 
+### run unit tests ###
+in a second terminal, navigate to **./cli/** and...
+```$xslt
+npm run test
+```
