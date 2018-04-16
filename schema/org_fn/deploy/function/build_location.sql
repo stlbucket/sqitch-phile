@@ -11,8 +11,7 @@ create function org_fn.build_location(
   _state text,
   _zip text,
   _lat text,
-  _lon text,
-  _id uuid default null
+  _lon text
 )
 returns org.location as $$
 declare
@@ -42,11 +41,10 @@ begin
     ,_lat
     ,_lon
     ,_app_user.app_tenant_id
-  ON CONFLICT(id)
+  ON CONFLICT(app_tenant_id, name)
   DO UPDATE
   SET
-    name = _name
-    ,address1 = _address1
+    address1 = _address1
     ,address2 = _address2
     ,city = _city
     ,state = _state
@@ -71,8 +69,6 @@ GRANT EXECUTE ON FUNCTION org_fn.build_location(
   ,text
   ,text
   ,text
-  ,uuid
 ) TO app_user;
-
 
 COMMIT;

@@ -1,42 +1,64 @@
 const expect = require('chai').expect
 const clog = require('fbkt-clog')
 const apolloClient = require('../../apolloClient')
-const buildAppTenant = require('../../gql/mutation/buildAppTenantOrganization')
-const allOrganizations = require('../../gql/query/allOrganizations')
+const buildLocation = require('../../gql/mutation/buildLocation')
+const allLocations = require('../../gql/query/allLocations')
 
 describe('org', function(done){
-  it('should build a location', function(done){
+  it('should build a location', function (done) {
     apolloClient.setGraphqlEndpoint('http://localhost:5000/graphql')
     apolloClient.setCredentials({
-      username: 'appsuperadmin',
+      username: 'testy.mctesterson@testyorg.org',
       password: 'badpassword'
     })
 
-    buildAppTenant({
-      name: 'Test Tenant Org'
-      ,identifier: 'TestTenantOrg'
-      ,primaryContactFirstName: 'test'
-      ,primaryContactLastName: 'tester'
-      ,primaryContactEmail: 'testy.mctesterson@testyorg.org'
+    buildLocation({
+      name: 'Test Tenant Org Location'
+      , address1: 'blah'
+      , address2: 'glarn'
+      , city: 'yon'
+      , state: 'agitated'
+      , zip: 'none'
+      , lat: ''
+      , lon: ''
     })
-      .then(organization => {
-        expect(organization).to.be.an('object')
-        expect(organization.name).to.equal('Test Tenant Org')
-
-        apolloClient.setCredentials({
-          username: 'testy.mctesterson@testyorg.org',
-          password: 'badpassword'
-        })
-
-        return apolloClient.connect()
+      .then(location => {
+        // clog('location', location)
+        expect(location).to.be.an('object')
+        expect(location.name).to.equal('Test Tenant Org Location')
+        done()
       })
-      .then(client => {
-        expect(client).to.be.an('object')
-        return allOrganizations()
+      .catch(error => {
+        done(error)
       })
-      .then(organizations => {
-        expect(organizations.length).to.equal(1)
-        expect(organizations[0].name).to.equal('Test Tenant Org')
+  })
+
+  it('should build a location for a second tenant', function (done) {
+    apolloClient.setGraphqlEndpoint('http://localhost:5000/graphql')
+    apolloClient.setCredentials({
+      username: 'peter.testaroo@testyorg.org',
+      password: 'badpassword'
+    })
+
+    buildLocation({
+      name: 'Test Tenant Org 1 Location'
+      , address1: 'blahs'
+      , address2: 'glarns'
+      , city: 'yons'
+      , state: 'agitateds'
+      , zip: 'nones'
+      , lat: ''
+      , lon: ''
+    })
+      .then(location => {
+        // clog('location', location)
+        expect(location).to.be.an('object')
+        expect(location.name).to.equal('Test Tenant Org 1 Location')
+        return allLocations()
+      })
+      .then(locations => {
+        // clog('loc', locations)
+        expect(locations.length).to.equal(1)
         done()
       })
       .catch(error => {
