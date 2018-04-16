@@ -77,6 +77,18 @@ packages=(
 ```$xslt
 ./cmd/deploy
 ```
+assuming you've got postgraphile installed globally:
+```$xslt
+./cmd/server
+```
+
+### run unit tests ###
+in a second terminal, navigate to **./cli/** and...
+```$xslt
+npm run test
+```
+
+## more things you can do from here ... ##
 ### revert ###
 ```$xslt
 ./cmd/revert
@@ -93,13 +105,3 @@ when you're ready to release, tag it:
 ./cmd/tag [tag-name] -n '[tag-message]'
 ```
 
-assuming you've got postgraphile installed globally:
-```$xslt
-./cmd/server
-```
-
-### run unit tests ###
-in a second terminal, navigate to **./cli/** and...
-```$xslt
-npm run test
-```
