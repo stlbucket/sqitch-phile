@@ -21,50 +21,67 @@ basic packages include:
   
 
 ## quick usage ##
-install <a href="http://sqitch.org/">sqitch</a>
+### install <a href="http://sqitch.org/">sqitch</a> ###
 
-install <a href="https://www.graphile.org/postgraphile/">postgraphile</a>
+### install <a href="https://www.graphile.org/postgraphile/">postgraphile</a> ###
 ```$xslt
 npm install -g postgraphile
 ```
 
-clone the repo:  
+### clone the repo ###
 ```$xslt
 git clone https://github.com/stlbucket/sqitch-phile.git
 ```
-git on in there:
+### git on in there ###
 ```$xslt
 cd sqitch-phile
 ```
-clean out the .git dir:
+### clean out the .git dir ###
 ```$xslt
 rm -rf .git
 ```
-init your git:
+### init your git ###
 ```$xslt
 git init
 git add .
 git commit -am 'init commit'
 ```
-create a database:
+### create a database ###
 ```$xslt
 createdb [your_db_name]
 ```
-configure your environment:
+### configure your environment ###
 ```$xslt
-./cmd/init
-./cmd/target [your_db_name] db:pg:[your_db_name]
-./cmd/engine [your_db_name]
+cp cmd.config.example cmd.config
 ```
-deploy:
+... then set your database name in cmd.config ...
+```$xslt
+#!/usr/bin/env bash
+database="[YOUR DATABASE NAME]"
+hostname="localhost"
+
+packages=(
+  schema/app-roles
+  schema/auth
+  schema/auth_fn
+  schema/org
+  schema/org_fn
+  core-data
+)
+```
+... then let sqitch-phile configure all your packages ...
+```$xslt
+./cmd/configure
+```
+### deploy ###
 ```$xslt
 ./cmd/deploy
 ```
-revert:
+### revert ###
 ```$xslt
 ./cmd/revert
 ```
-verify:
+### verify ###
 ```$xslt
 ./cmd/verify
 ```
