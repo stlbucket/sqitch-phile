@@ -48,7 +48,7 @@ git commit -am 'init commit'
 ```
 ### create a database ###
 ```$xslt
-createdb [your_db_name]
+createdb [YOUR DATABASE NAME]
 ```
 ### configure your environment ###
 ```$xslt
