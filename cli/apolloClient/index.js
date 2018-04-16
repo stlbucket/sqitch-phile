@@ -52,7 +52,7 @@ function initAuthClient (_username, _password) {
     })
       .then(result => {
         // clog('SIGNIN RESULT', result)
-        clog('NEW APOLLO SIGNIN', _credentials.username)
+        // console.log('NEW APOLLO SIGNIN', _credentials.username)
 
         const token = result.data.authenticate.jwtToken
 

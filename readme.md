@@ -52,6 +52,7 @@ createdb [YOUR DATABASE NAME]
 ```
 ### configure your environment ###
 ```$xslt
+cd db
 cp cmd.config.example cmd.config
 ```
 ... then set your database name in **cmd.config** ...
