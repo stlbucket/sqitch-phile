@@ -19,6 +19,9 @@ BEGIN;
   ALTER TABLE auth.app_user ADD CONSTRAINT fk_app_user_app_tenant FOREIGN KEY ( app_tenant_id ) REFERENCES auth.app_tenant( id );
 
   --||--
+  GRANT select ON TABLE auth.app_user TO app_super_admin;
+
+  --||--
   CREATE FUNCTION auth.fn_timestamp_update_app_user() RETURNS trigger AS $$
   BEGIN
     NEW.updated_at = current_timestamp;

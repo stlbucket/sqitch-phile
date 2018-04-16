@@ -1,11 +1,15 @@
 const expect = require('chai').expect
 const clog = require('fbkt-clog')
+const apolloClient = require('../../apolloClient')
 const buildAppTenant = require('../../gql/mutation/buildAppTenant')
 
 describe('auth', function(done){
   it('should build a new app tenant', function(done){
-    process.env.USERNAME = 'appsuperadmin'
-    process.env.PASSWORD = 'badpassword'
+    apolloClient.setGraphqlEndpoint('http://localhost:5000/graphql')
+    apolloClient.setCredentials({
+      username: 'appsuperadmin',
+      password: 'badpassword'
+    })
 
     buildAppTenant({
       name: 'Test'

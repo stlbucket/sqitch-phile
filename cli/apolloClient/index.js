@@ -8,13 +8,12 @@ const gql = require('graphql-tag')
 
 let _client
 let _clientInitializer
-const _graphqlEndpoint = 'http://localhost:5000/graphql'// process.env.SORO_QUOTING_API_ENDPOINT
+let _credentials = {
+  username: '',
+  password: ''
+};
 
-if (_graphqlEndpoint === null || _graphqlEndpoint === undefined || _graphqlEndpoint === '') {
-  throw new Error('SORO_QUOTING_API_ENDPOINT process variable must be defined')
-}
-
-const _auth = true
+let _graphqlEndpoint
 
 const signinUserMutation = gql(`
 mutation Authenticate(
@@ -47,14 +46,13 @@ function initAuthClient (_username, _password) {
       password: _password
     }
 
-    clog('vars', variables)
-
     _clientInitializer = _initClient.mutate({
       mutation: signinUserMutation,
       variables: variables
     })
       .then(result => {
-        clog('SIGNIN RESULT', result)
+        // clog('SIGNIN RESULT', result)
+        clog('NEW APOLLO SIGNIN', _credentials.username)
 
         const token = result.data.authenticate.jwtToken
 
@@ -62,7 +60,7 @@ function initAuthClient (_username, _password) {
           'authorization': `Bearer ${token}`
         }
 
-        clog('HEADERS', headers)
+        // clog('HEADERS', headers)
 
         _client = new ApolloClient({
           // By default, this client will send queries to the
@@ -85,29 +83,34 @@ function initAuthClient (_username, _password) {
   }
 }
 
-function initNoAuthClient () {
-  _client = new ApolloClient({
-    // By default, this client will send queries to the
-    //  `/graphql` endpoint on the same host
-    link: new HttpLink({uri: _graphqlEndpoint, fetch: fetch}),
-    cache: new InMemoryCache()
-  })
+function setCredentials (credentials) {
+  _client = null
+  _clientInitializer = null
+  _credentials.username = credentials.username
+  _credentials.password = credentials.password
+}
 
-  return Promise.resolve(_client)
+function setGraphqlEndpoint (endpoint) {
+  _graphqlEndpoint = endpoint
 }
 
 function getClient () {
-  const _username = process.env.USERNAME
-  const _password = process.env.PASSWORD
+  const _username = _credentials.username
+  const _password = _credentials.password
+
+  if (_graphqlEndpoint === null || _graphqlEndpoint === undefined || _graphqlEndpoint === '') {
+    throw new Error('APOLLO GRAPHQL ENDPOINT must be defined')
+  }
 
   if (_client) {
     return Promise.resolve(_client)
-  } else if (_auth) {
+  } else {
     return initAuthClient(_username, _password)
-  // } else {
-  //   clog("NO AUTH - THAT'S NOT REALLY COOL")
-  //   return initNoAuthClient()
   }
 }
 
-module.exports = getClient
+module.exports = {
+  connect: getClient,
+  setGraphqlEndpoint: setGraphqlEndpoint,
+  setCredentials: setCredentials
+}

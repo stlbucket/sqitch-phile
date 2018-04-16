@@ -20,12 +20,24 @@ mutation BuildTenantOrganization(
     organization {
       id
       name
+      appTenantId
+      thisAppTenantId
+      appTenant: appTenantByAppTenantId {
+        id
+        name
+      }
       contacts: contactsByOrganizationId {
         nodes {
           id
           email
           firstName
           lastName
+          appUserId
+          appUser: appUserByAppUserId {
+            id
+            appTenantId
+            username
+          }
         }
       }
     }
@@ -34,14 +46,13 @@ mutation BuildTenantOrganization(
 `
 
 function buildAppTenantOrganziation(variables){
-  return apolloClient()
+  return apolloClient.connect()
     .then(client => {
       return client.mutate({
           mutation: mutation,
           variables: variables
         })
         .then(result => {
-          clog('result', result)
           return result.data.buildTenantOrganization.organization
         })
     })

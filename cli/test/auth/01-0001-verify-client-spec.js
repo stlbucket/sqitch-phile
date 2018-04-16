@@ -4,10 +4,13 @@ const apolloClient = require('../../apolloClient')
 
 describe('apollo client', function(done){
   it('should connect to the server', function(done){
-    process.env.USERNAME = 'appsuperadmin'
-    process.env.PASSWORD = 'badpassword'
+    apolloClient.setGraphqlEndpoint('http://localhost:5000/graphql')
+    apolloClient.setCredentials({
+      username: 'appsuperadmin',
+      password: 'badpassword'
+    })
 
-    apolloClient()
+    apolloClient.connect()
       .then(client => {
         clog('CLIENT ', client)
         expect(client).to.be.an('object')

@@ -11,6 +11,8 @@ BEGIN;
     identifier text,
     CONSTRAINT pk_app_tenant PRIMARY KEY (id)
   );
+  --||--
+  GRANT select ON TABLE auth.app_tenant TO app_super_admin;
 --  --||--
 --  ALTER TABLE auth.app_tenant ENABLE ROW LEVEL SECURITY;
 --  --||--

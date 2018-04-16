@@ -21,14 +21,13 @@ mutation BuildAppTenant(
 `
 
 function buildAppTenant(variables){
-  return apolloClient()
+  return apolloClient.connect()
     .then(client => {
       return client.mutate({
           mutation: mutation,
           variables: variables
         })
         .then(result => {
-          clog('result', result)
           return result.data.buildAppTenant.appTenant
         })
     })

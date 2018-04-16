@@ -19,11 +19,9 @@ declare
 begin
   _app_user := (SELECT auth_fn.current_app_user());
 
-  _app_tenant := (
-    SELECT auth_fn.build_app_tenant(
-      _name
-      ,_identifier
-    )
+  _app_tenant := auth_fn.build_app_tenant(
+    _name
+    ,_identifier
   );
 
   SELECT *
@@ -33,15 +31,15 @@ begin
   AND username = _primary_contact_email
   ;
 
+
   IF _app_user.id IS NULL THEN
-    _app_user := (
-      SELECT auth_fn.build_app_user(
+    _app_user := auth_fn.build_app_user(
         _app_tenant.id
         ,_primary_contact_email
         ,'badpassword'
         ,'Admin'
       )
-    );
+    ;
   END IF;
 
   _organization := org_fn.build_organization(
@@ -56,12 +54,25 @@ begin
   INTO _organization
   ;
 
-  _primary_contact := org_fn.build_contact(
-    _primary_contact_first_name
-    ,_primary_contact_last_name
-    ,_primary_contact_email
-    ,_organization.id
-  );
+  SELECT *
+  INTO _primary_contact
+  FROM org.contact
+  WHERE organization_id = _organization.id
+  AND email = _primary_contact_email;
+
+  IF _primary_contact.id IS NULL THEN
+    _primary_contact := org_fn.build_contact(
+      _primary_contact_first_name
+      ,_primary_contact_last_name
+      ,_primary_contact_email
+      ,_organization.id
+    );
+
+    UPDATE org.contact
+    SET app_user_id = _app_user.id
+    WHERE id = _primary_contact.id
+    ;
+  END IF;
 
   RETURN _organization;
 

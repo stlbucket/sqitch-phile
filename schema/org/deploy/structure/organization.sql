@@ -36,5 +36,9 @@ BEGIN;
     FOR EACH ROW
     EXECUTE PROCEDURE org.fn_timestamp_update_organization();
   --||--
+  alter table org.organization enable row level security;
+  --||--
+  create policy select_organization on org.organization for select
+    using (auth_fn.app_user_has_access(this_app_tenant_id) = true);
 
 COMMIT;
