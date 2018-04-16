@@ -57,5 +57,24 @@ describe('org', function(done){
         done(error)
       })
   })
+
+  it('should get all contacts for current user', function (done) {
+    apolloClient.setGraphqlEndpoint('http://localhost:5000/graphql')
+    apolloClient.setCredentials({
+      username: 'testy.mctesterson@testyorg.org',
+      password: 'badpassword'
+    })
+
+    currentAppUserContact()
+      .then(contact => {
+        expect(contact).to.be.an('object')
+        expect(contact.email).to.equal('testy.mctesterson@testyorg.org')
+        done()
+      })
+      .catch(error => {
+        done(error)
+      })
+  })
+
 })
 

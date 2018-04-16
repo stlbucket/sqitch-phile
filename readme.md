@@ -24,39 +24,39 @@ basic packages include:
 ### install <a href="http://sqitch.org/">sqitch</a> ###
 
 ### install <a href="https://www.graphile.org/postgraphile/">postgraphile</a> ###
-```$xslt
+```
 npm install -g postgraphile
 ```
 
 ### clone the repo ###
-```$xslt
+```
 git clone https://github.com/stlbucket/sqitch-phile.git
 ```
 ### git on in there ###
-```$xslt
+```
 cd sqitch-phile
 ```
 ### clean out the .git dir ###
-```$xslt
+```
 rm -rf .git
 ```
 ### init your git ###
-```$xslt
+```
 git init
 git add .
 git commit -am 'init commit'
 ```
 ### create a database ###
-```$xslt
+```
 createdb [YOUR DATABASE NAME]
 ```
 ### configure your environment ###
-```$xslt
+```
 cd db
 cp cmd.config.example cmd.config
 ```
 ... then set your database name in **cmd.config** ...
-```$xslt
+```
 #!/usr/bin/env bash
 database="[YOUR DATABASE NAME]"
 hostname="localhost"
@@ -71,38 +71,42 @@ packages=(
 )
 ```
 ... then let sqitch-phile configure all your packages ...
-```$xslt
+```
 ./cmd/configure
 ```
 ### deploy ###
-```$xslt
+```
 ./cmd/deploy
 ```
 assuming you've got postgraphile installed globally:
-```$xslt
+```
 ./cmd/server
 ```
 
 ### run unit tests ###
 in a second terminal, navigate to **./cli/** and...
-```$xslt
+```
 npm run test
 ```
 
 ## more things you can do from here ... ##
+### look at data resulting from unit tests ##
+```
+./dev/execute unit-test-results
+```
 ### revert ###
-```$xslt
+```
 ./cmd/revert
 ```
 ### verify ###
-```$xslt
+```
 ./cmd/verify
 ```
 
 work on your schemas individually the <a href="https://metacpan.org/pod/sqitchtutorial">sqitch way</a>
 
 when you're ready to release, tag it:
-```$xslt
+```
 ./cmd/tag [tag-name] -n '[tag-message]'
 ```
 
