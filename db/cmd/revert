@@ -4,7 +4,7 @@ source ./cmd.config
 
 echo ""
 echo ""
-echo "CONFIGURING SQITCH ENGINE"
+echo "REVERTING"
 echo ""
 
 

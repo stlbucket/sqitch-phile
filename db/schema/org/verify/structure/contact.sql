@@ -12,6 +12,10 @@ BEGIN;
     first_name,
     last_name,
     email,
+    cell_phone,
+    office_phone,
+    title,
+    nickname,
     external_id
   FROM org.contact
   WHERE FALSE;

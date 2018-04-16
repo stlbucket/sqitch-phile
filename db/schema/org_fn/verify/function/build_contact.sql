@@ -7,6 +7,11 @@ SELECT has_function_privilege('
     text
     ,text
     ,text
+    ,text
+    ,text
+    ,text
+    ,text
+    ,text
     ,uuid
   )
 ', 'execute');

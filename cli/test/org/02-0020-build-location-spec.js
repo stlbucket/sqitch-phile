@@ -57,8 +57,25 @@ describe('org', function(done){
         return allLocations()
       })
       .then(locations => {
-        // clog('loc', locations)
         expect(locations.length).to.equal(1)
+        expect(locations[0].name).to.equal('Test Tenant Org 1 Location')
+        done()
+      })
+      .catch(error => {
+        done(error)
+      })
+  })
+
+  it('should allow appsuperadmin to see all locations', function (done) {
+    apolloClient.setGraphqlEndpoint('http://localhost:5000/graphql')
+    apolloClient.setCredentials({
+      username: 'appsuperadmin',
+      password: 'badpassword'
+    })
+
+    allLocations()
+      .then(locations => {
+        expect(locations.length).to.equal(2)
         done()
       })
       .catch(error => {

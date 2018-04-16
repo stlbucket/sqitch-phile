@@ -15,6 +15,12 @@ BEGIN;
     first_name text,
     last_name text,
     email text,
+    cell_phone text,
+    office_phone text,
+    title text,
+    nickname text,
+    CONSTRAINT uq_contact_app_tenant_and_email UNIQUE (app_tenant_id, email),
+    CONSTRAINT uq_contact_app_tenant_and_external_id UNIQUE (app_tenant_id, external_id),
     CONSTRAINT pk_contact PRIMARY KEY (id)
   );
   --||--

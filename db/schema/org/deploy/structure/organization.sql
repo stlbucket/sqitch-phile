@@ -5,7 +5,6 @@ BEGIN;
 
   CREATE TABLE org.organization (
     id uuid UNIQUE NOT NULL DEFAULT uuid_generate_v1(),
-    this_app_tenant_id uuid NULL UNIQUE,
     app_tenant_id uuid NOT NULL,
     created_at timestamp NOT NULL DEFAULT current_timestamp,
     updated_at timestamp NOT NULL,
@@ -20,8 +19,6 @@ BEGIN;
   ALTER TABLE org.organization ADD CONSTRAINT fk_organization_location FOREIGN KEY ( location_id ) REFERENCES org.location( id );
   --||--
   ALTER TABLE org.organization ADD CONSTRAINT fk_organization_app_tenant FOREIGN KEY ( app_tenant_id ) REFERENCES auth.app_tenant( id );
-  --||--
-  ALTER TABLE org.organization ADD CONSTRAINT fk_organization_this_app_tenant FOREIGN KEY ( this_app_tenant_id ) REFERENCES auth.app_tenant( id );
 
 
   --||--
@@ -44,6 +41,6 @@ BEGIN;
   alter table org.organization enable row level security;
   --||--
   create policy select_organization on org.organization for select
-    using (auth_fn.app_user_has_access(this_app_tenant_id) = true);
+    using (auth_fn.app_user_has_access(app_tenant_id) = true);
 
 COMMIT;

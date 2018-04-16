@@ -9,7 +9,6 @@ query {
       id
       name
       appTenantId
-      thisAppTenantId
     }
   }
 }`

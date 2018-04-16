@@ -17,11 +17,9 @@ declare
   _organization org.organization;
   _primary_contact org.contact;
 begin
-  _app_user := (SELECT auth_fn.current_app_user());
-
   _app_tenant := auth_fn.build_app_tenant(
     _name
-    ,_identifier
+    ,''
   );
 
   SELECT *
@@ -31,6 +29,17 @@ begin
   AND username = _primary_contact_email
   ;
 
+--  RAISE EXCEPTION '
+--  _name: %
+--  _username: %
+--  _app_tenant_id: %
+--  _app_user: %
+--  '
+--  ,_name
+--  ,_primary_contact_email
+--  ,_app_tenant.id
+--  ,_app_user
+--  ;
 
   IF _app_user.id IS NULL THEN
     _app_user := auth_fn.build_app_user(
@@ -42,16 +51,33 @@ begin
     ;
   END IF;
 
-  _organization := org_fn.build_organization(
-    _name
-    ,_identifier
-  );
-
-  UPDATE org.organization
-  SET this_app_tenant_id = _app_tenant.id
-  WHERE id = _organization.id
-  RETURNING *
+  SELECT *
   INTO _organization
+  FROM org.organization
+  WHERE name = _name
+  AND app_tenant_id = _app_tenant.id
+  ;
+
+  IF _organization.id IS NULL THEN
+    INSERT INTO
+    org.organization(
+      name
+      ,external_id
+      ,app_tenant_id
+    )
+    SELECT
+      _name
+      ,_identifier
+      ,_app_tenant.id
+    RETURNING *
+    INTO _organization;
+  END IF;
+
+  UPDATE auth.app_tenant
+  SET identifier = _organization.id
+  WHERE id = _app_tenant.id
+  RETURNING *
+  INTO _app_tenant
   ;
 
   SELECT *
@@ -65,6 +91,11 @@ begin
       _primary_contact_first_name
       ,_primary_contact_last_name
       ,_primary_contact_email
+      ,''
+      ,''
+      ,''
+      ,''
+      ,''
       ,_organization.id
     );
 
