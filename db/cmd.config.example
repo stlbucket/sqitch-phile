@@ -10,3 +10,7 @@ packages=(
   schema/org_fn
   core-data
 )
+
+function_packages=(
+  schema/org_fn
+)
