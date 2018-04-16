@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-dropdb $1
-createdb $1
+source ./cmd.config
+
+dropdb $database
+createdb $database
 ./cmd/deploy
 ./cmd/server
