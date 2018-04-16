@@ -12,7 +12,6 @@ describe('apollo client', function(done){
 
     apolloClient.connect()
       .then(client => {
-        clog('CLIENT ', client)
         expect(client).to.be.an('object')
         done()
       })

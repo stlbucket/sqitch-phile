@@ -15,14 +15,14 @@ BEGIN;
     CONSTRAINT uq_organization_app_tenant_and_name UNIQUE (app_tenant_id, name),
     CONSTRAINT pk_organization PRIMARY KEY (id)
   );
-  --||--
-  GRANT select ON TABLE org.organization TO app_user;
+
   --||--
   ALTER TABLE org.organization ADD CONSTRAINT fk_organization_location FOREIGN KEY ( location_id ) REFERENCES org.location( id );
   --||--
   ALTER TABLE org.organization ADD CONSTRAINT fk_organization_app_tenant FOREIGN KEY ( app_tenant_id ) REFERENCES auth.app_tenant( id );
   --||--
   ALTER TABLE org.organization ADD CONSTRAINT fk_organization_this_app_tenant FOREIGN KEY ( this_app_tenant_id ) REFERENCES auth.app_tenant( id );
+
 
   --||--
   CREATE FUNCTION org.fn_timestamp_update_organization() RETURNS trigger AS $$
@@ -35,6 +35,11 @@ BEGIN;
     BEFORE INSERT OR UPDATE ON org.organization
     FOR EACH ROW
     EXECUTE PROCEDURE org.fn_timestamp_update_organization();
+
+
+
+  --||--
+  GRANT select ON TABLE org.organization TO app_user;
   --||--
   alter table org.organization enable row level security;
   --||--

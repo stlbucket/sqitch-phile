@@ -19,8 +19,6 @@ BEGIN;
     lon text,
     CONSTRAINT pk_location PRIMARY KEY (id)
   );
-
-  GRANT select ON TABLE org.location TO app_user;
   --||--
   ALTER TABLE org.location ADD CONSTRAINT fk_location_app_tenant FOREIGN KEY ( app_tenant_id ) REFERENCES auth.app_tenant( id );
 
@@ -36,5 +34,14 @@ BEGIN;
     FOR EACH ROW
     EXECUTE PROCEDURE org.fn_timestamp_update_location();
   --||--
+
+
+  --||--
+  GRANT select ON TABLE org.location TO app_user;
+  --||--
+  alter table org.location enable row level security;
+  --||--
+  create policy select_location on org.location for select
+    using (auth_fn.app_user_has_access(app_tenant_id) = true);
 
 COMMIT;

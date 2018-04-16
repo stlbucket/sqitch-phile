@@ -16,7 +16,6 @@ describe('auth', function(done){
       ,identifier: 'Test'
     })
       .then(appTenant => {
-        clog('appTenant', appTenant)
         expect(appTenant).to.be.an('object')
         expect(appTenant.name).to.equal('Test')
         expect(appTenant.identifier).to.equal('Test')

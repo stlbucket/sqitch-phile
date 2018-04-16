@@ -18,8 +18,6 @@ BEGIN;
     CONSTRAINT pk_contact PRIMARY KEY (id)
   );
   --||--
-  GRANT select ON TABLE org.contact TO app_user;
-  --||--
   ALTER TABLE org.contact ADD CONSTRAINT fk_contact_organization FOREIGN KEY ( organization_id ) REFERENCES org.organization( id );
   --||--
   ALTER TABLE org.contact ADD CONSTRAINT fk_contact_location FOREIGN KEY ( location_id ) REFERENCES org.location( id );
@@ -40,5 +38,14 @@ BEGIN;
     FOR EACH ROW
     EXECUTE PROCEDURE org.fn_timestamp_update_contact();
   --||--
+
+
+  --||--
+  GRANT select ON TABLE org.contact TO app_user;
+  --||--
+  alter table org.contact enable row level security;
+  --||--
+  create policy select_contact on org.contact for select
+    using (auth_fn.app_user_has_access(app_tenant_id) = true);
 
 COMMIT;
