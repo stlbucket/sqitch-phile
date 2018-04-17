@@ -21,12 +21,10 @@ const engine = new ApolloEngine({
   apiKey: "service:stlbucket-4863:E1JvHPJjVn04vWxTF9w2PQ"
 });
 
-// Start your server
 engine.listen({
   port: 5000,
   expressApp: app
 });
 
-// app.listen(5000);
 
-console.log('shit be good')
+console.log('listening on 5000')

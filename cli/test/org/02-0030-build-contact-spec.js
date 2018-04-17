@@ -1,10 +1,12 @@
 const expect = require('chai').expect
 const clog = require('fbkt-clog')
 const apolloClient = require('../../apolloClient')
-const currentAppUserContact = require('../../gql/mutation/currentAppUserContact')
-const buildContact = require('../../gql/mutation/buildContact')
-const allLocations = require('../../gql/query/allLocations')
-
+const readFileSync = require('fs').readFileSync
+const currentAppUserContact = readFileSync(__dirname + '/../../gql/org/mutation/currentAppUserContact.graphql', 'utf8')
+const buildContact = readFileSync(__dirname + '/../../gql/org/mutation/buildContact.graphql', 'utf8')
+//
+// // const allLocations = require('../../gql/query/allLocations')
+//
 describe('org', function(done){
 
   it('should build a new contact for current user organization', function (done) {
@@ -14,19 +16,26 @@ describe('org', function(done){
       password: 'badpassword'
     })
 
-    currentAppUserContact()
+    apolloClient.mutate({
+      mutation: currentAppUserContact,
+      variables: {},
+      resultPath: 'currentAppUserContact.contact'
+    })
       .then(userContact => {
-        // clog('userContact', userContact)
-        return buildContact({
-          firstName: 'tony',
-          lastName: 'tiger',
-          email: 'tonytiger@testyorg.org',
-          cellPhone: '555.555.5555',
-          officePhone: '',
-          title: 'chief sugar shill',
-          nickname: 'so great',
-          externalId: '',
-          organizationId: userContact.organization.id
+        return apolloClient.mutate({
+          mutation: buildContact,
+          variables: {
+            firstName: 'tony',
+            lastName: 'tiger',
+            email: 'tonytiger@testyorg.org',
+            cellPhone: '555.555.5555',
+            officePhone: '',
+            title: 'chief sugar shill',
+            nickname: 'so great',
+            externalId: '',
+            organizationId: userContact.organization.id
+          },
+          resultPath: 'buildContact.contact'
         })
       })
       .then(contact => {
@@ -47,7 +56,11 @@ describe('org', function(done){
       password: 'badpassword'
     })
 
-    currentAppUserContact()
+    apolloClient.mutate({
+      mutation: currentAppUserContact,
+      variables: {},
+      resultPath: 'currentAppUserContact.contact'
+    })
       .then(contact => {
         expect(contact).to.be.an('object')
         expect(contact.email).to.equal('testy.mctesterson@testyorg.org')

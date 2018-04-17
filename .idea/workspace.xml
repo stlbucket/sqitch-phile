@@ -2,21 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54a2646d-4b52-4718-a97c-83e10e8b822a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/api/server.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/cli/gql/mutation/currentAppUserContact/currentAppUserContact.graphql" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/cli/test/org/02-0005-get-current-app-user-contact-spec.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/cli/test/org/meh.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/graphql.config.json" />
-      <change beforePath="$PROJECT_DIR$/cli/gql/mutation/buildAppTenant/index.js" afterPath="$PROJECT_DIR$/cli/gql/mutation/buildAppTenant/index.js" />
-      <change beforePath="$PROJECT_DIR$/cli/gql/mutation/buildAppTenantOrganization/index.js" afterPath="$PROJECT_DIR$/cli/gql/mutation/buildAppTenantOrganization/index.js" />
-      <change beforePath="$PROJECT_DIR$/cli/gql/mutation/buildLocation/index.js" afterPath="$PROJECT_DIR$/cli/gql/mutation/buildLocation/index.js" />
-      <change beforePath="$PROJECT_DIR$/cli/gql/mutation/currentAppUserContact/index.js" afterPath="$PROJECT_DIR$/cli/gql/mutation/currentAppUserContact/index.js" />
-      <change beforePath="$PROJECT_DIR$/cli/gql/query/allLocations/index.js" afterPath="$PROJECT_DIR$/cli/gql/query/allLocations/index.js" />
-      <change beforePath="$PROJECT_DIR$/cli/gql/query/allOrganizations/index.js" afterPath="$PROJECT_DIR$/cli/gql/query/allOrganizations/index.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/cli/gql/auth/mutation/buildAppTenant.graphql" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/cli/gql/org/mutation/buildAppTenantOrganization.graphql" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/cli/gql/org/mutation/buildContact.graphql" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/cli/gql/org/mutation/buildLocation.graphql" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/cli/gql/org/mutation/currentAppUserContact.graphql" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/cli/gql/org/query/allLocations.graphql" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/cli/gql/org/query/allOrganizations.graphql" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/api/server.js" afterPath="$PROJECT_DIR$/api/server.js" />
+      <change beforePath="$PROJECT_DIR$/cli/apolloClient/index.js" afterPath="$PROJECT_DIR$/cli/apolloClient/index.js" />
+      <change beforePath="$PROJECT_DIR$/cli/gql/mutation/buildAppTenant/BuildAppTenant.graphql" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cli/gql/mutation/buildAppTenant/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cli/gql/mutation/buildAppTenantOrganization/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cli/gql/mutation/buildContact/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cli/gql/mutation/buildLocation/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cli/gql/mutation/currentAppUserContact/currentAppUserContact.graphql" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cli/gql/mutation/currentAppUserContact/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cli/gql/query/allLocations/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cli/gql/query/allOrganizations/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cli/test/auth/01-0020-build-app-tenant-spec.js" afterPath="$PROJECT_DIR$/cli/test/auth/01-0020-build-app-tenant-spec.js" />
+      <change beforePath="$PROJECT_DIR$/cli/test/org/02-0005-get-current-app-user-contact-spec.js" afterPath="$PROJECT_DIR$/cli/test/org/02-0005-current-app-user-contact-spec.js" />
+      <change beforePath="$PROJECT_DIR$/cli/test/org/02-0010-build-app-tenant-organization-spec.js" afterPath="$PROJECT_DIR$/cli/test/org/02-0010-build-app-tenant-organization-spec.js" />
+      <change beforePath="$PROJECT_DIR$/cli/test/org/02-0020-build-location-spec.js" afterPath="$PROJECT_DIR$/cli/test/org/02-0020-build-location-spec.js" />
       <change beforePath="$PROJECT_DIR$/cli/test/org/02-0030-build-contact-spec.js" afterPath="$PROJECT_DIR$/cli/test/org/02-0030-build-contact-spec.js" />
-      <change beforePath="$PROJECT_DIR$/db/schema/org_fn/sqitch.plan" afterPath="$PROJECT_DIR$/db/schema/org_fn/sqitch.plan" />
-      <change beforePath="$PROJECT_DIR$/db/schema/org_fn/verify/function/build_location.sql" afterPath="$PROJECT_DIR$/db/schema/org_fn/verify/function/build_location.sql" />
+      <change beforePath="$PROJECT_DIR$/cli/test/org/meh.js" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,17 +42,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="server.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/api/server.js">
+      <file leaf-file-name="02-0010-build-app-tenant-organization-spec.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cli/test/org/02-0010-build-app-tenant-organization-spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+            <state relative-caret-position="777">
+              <caret line="129" column="4" lean-forward="false" selection-start-line="129" selection-start-column="4" selection-end-line="129" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>currentAppUserContact(</find>
+      <find>buildContact</find>
+      <find>allLoca</find>
+      <find>Location</find>
+      <find>allOrg</find>
+      <find>allOrgan</find>
+      <find>should allow appsuperadmin to see all organizations</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>Organization</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/cli/test</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,21 +78,42 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/cli/graphql.config.json" />
-        <option value="$PROJECT_DIR$/cli/gql/mutation/buildAppTenant/BuildAppTenant.graphql" />
-        <option value="$PROJECT_DIR$/cli/test/org/02-0030-build-contact-spec.js" />
-        <option value="$PROJECT_DIR$/cli/gql/mutation/currentAppUserContact/currentAppUserContact.graphql" />
         <option value="$PROJECT_DIR$/cli/test/org/02-0005-get-current-app-user-contact-spec.js" />
         <option value="$PROJECT_DIR$/api/server.js" />
+        <option value="$PROJECT_DIR$/cli/gql/query/allLocations/index.js" />
+        <option value="$PROJECT_DIR$/cli/gql/query/allOrganizations/index.js" />
+        <option value="$PROJECT_DIR$/cli/gql/mutation/currentAppUserContact/currentAppUserContact.graphql" />
+        <option value="$PROJECT_DIR$/cli/gql/mutation/currentAppUserContact/index.js" />
+        <option value="$PROJECT_DIR$/cli/gql/mutation/buildAppTenant/BuildAppTenant.graphql" />
+        <option value="$PROJECT_DIR$/cli/gql/mutation/org/currentAppUserContact.graphql" />
+        <option value="$PROJECT_DIR$/cli/test/auth/01-0020-build-app-tenant-spec.js" />
+        <option value="$PROJECT_DIR$/cli/test/org/02-0005-current-app-user-contact-spec.js" />
+        <option value="$PROJECT_DIR$/cli/gql/org/mutation/buildLocation.graphql" />
+        <option value="$PROJECT_DIR$/cli/gql/org/mutation/buildAppTenantOrganization.graphql" />
+        <option value="$PROJECT_DIR$/cli/gql/org/mutation/buildContact.graphql" />
+        <option value="$PROJECT_DIR$/cli/test/org/02-0030-build-contact-spec.js" />
+        <option value="$PROJECT_DIR$/cli/gql/org/query/allLocations.graphql" />
+        <option value="$PROJECT_DIR$/cli/gql/org/query/allOrganizations.graphql" />
+        <option value="$PROJECT_DIR$/cli/test/org/02-0020-build-location-spec.js" />
+        <option value="$PROJECT_DIR$/cli/apolloClient/index.js" />
+        <option value="$PROJECT_DIR$/cli/test/org/02-0010-build-app-tenant-organization-spec.js" />
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/api/node_modules" />
     <handled-path value="$PROJECT_DIR$/cli/node_modules" />
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
@@ -89,7 +139,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -100,12 +149,36 @@
             <path>
               <item name="sqitch-phile" type="b2602c69:ProjectViewProjectNode" />
               <item name="sqitch-phile" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="cli" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sqitch-phile" type="b2602c69:ProjectViewProjectNode" />
               <item name="sqitch-phile" type="462c0819:PsiDirectoryNode" />
               <item name="cli" type="462c0819:PsiDirectoryNode" />
+              <item name="gql" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sqitch-phile" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sqitch-phile" type="462c0819:PsiDirectoryNode" />
+              <item name="cli" type="462c0819:PsiDirectoryNode" />
+              <item name="gql" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sqitch-phile" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sqitch-phile" type="462c0819:PsiDirectoryNode" />
+              <item name="cli" type="462c0819:PsiDirectoryNode" />
+              <item name="gql" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="mutation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sqitch-phile" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sqitch-phile" type="462c0819:PsiDirectoryNode" />
+              <item name="cli" type="462c0819:PsiDirectoryNode" />
+              <item name="gql" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="query" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sqitch-phile" type="b2602c69:ProjectViewProjectNode" />
@@ -122,29 +195,18 @@
             </path>
             <path>
               <item name="sqitch-phile" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sqitch-phile" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sqitch-phile" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sqitch-phile" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-              <item name="cmd" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sqitch-phile" type="b2602c69:ProjectViewProjectNode" />
               <item name="GraphQL Schemas" type="390a5855:JSGraphQLSchemaDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -152,12 +214,16 @@
     <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/cli/node_modules/mocha" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cli/gql/org" />
+      <recent name="$PROJECT_DIR$/cli/gql/org/mutation" />
+      <recent name="$PROJECT_DIR$/cli/gql" />
+      <recent name="$PROJECT_DIR$/cli/gql/auth/mutation" />
+      <recent name="$PROJECT_DIR$/cli/gql/mutation" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/cli/test/org" />
       <recent name="$PROJECT_DIR$/cli/gql/mutation/currentAppUserContact" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -185,34 +251,34 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1523926965396</updated>
-      <workItem from="1523926966531" duration="1568000" />
+      <workItem from="1523926966531" duration="5127000" />
+      <workItem from="1523933672313" duration="1479000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1568000" />
+    <option name="totallyTimeSpent" value="6606000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24960506" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24960506" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="GraphQL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="GraphQL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -227,23 +293,96 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/graphql.config.json">
+    <entry file="file://$PROJECT_DIR$/cli/test/org/meh.js" />
+    <entry file="file://$PROJECT_DIR$/cli/gql/mutation/currentAppUserContact/index.js" />
+    <entry file="file://$PROJECT_DIR$/cli/gql/auth/mutation/buildAppTenant.graphql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="135">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cli/gql/mutation/buildAppTenant/index.js" />
+    <entry file="file://$PROJECT_DIR$/cli/test/auth/01-0020-build-app-tenant-spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="59" lean-forward="false" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cli/gql/mutation/buildAppTenant/mutation.graphql">
+    <entry file="file://$PROJECT_DIR$/cli/gql/mutation/buildAppTenantOrganization/index.js" />
+    <entry file="file://$PROJECT_DIR$/cli/test/org/02-0005-current-app-user-contact-spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="5" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="1" />
+        <state relative-caret-position="255">
+          <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cli/gql/mutation/buildLocation/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cli/gql/mutation/buildContact/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="556">
+          <caret line="58" column="10" lean-forward="true" selection-start-line="58" selection-start-column="10" selection-end-line="58" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cli/gql/mutation/buildAppTenant/BuildAppTenant.graphql">
+    <entry file="file://$PROJECT_DIR$/cli/gql/org/mutation/buildAppTenantOrganization.graphql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cli/gql/org/mutation/buildContact.graphql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" column="1" lean-forward="false" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cli/gql/org/mutation/currentAppUserContact.graphql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cli/test/org/02-0030-build-contact-spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cli/gql/org/mutation/buildLocation.graphql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="15" lean-forward="false" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cli/gql/org/query/allLocations/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="1" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="20" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cli/gql/org/query/allLocations.graphql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="1" lean-forward="false" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
@@ -251,83 +390,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cli/gql/mutation/currentAppUserContact/index.js">
+    <entry file="file://$PROJECT_DIR$/cli/gql/org/query/allOrganizations/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+        <state relative-caret-position="195">
+          <caret line="13" column="1" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="13" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cli/gql/org/query/allOrganizations.graphql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cli/test/org/02-0020-build-location-spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="762">
+          <caret line="89" column="4" lean-forward="false" selection-start-line="89" selection-start-column="4" selection-end-line="89" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cli/apolloClient/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="777">
+          <caret line="137" column="0" lean-forward="false" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
           <folding>
-            <marker date="1523926323537" expanded="true" signature="146:412" ph="mutation...{&#10;&#9;currentAppUserContact(input:{}) {&#10;    contact {&#10;      id&#10;      lastName&#10;      firstName&#10;      email&#10;      organization: organizationByOrganizationId {&#10;        id&#10;        name&#10;        externalId&#10;        appTenantId&#10;      }&#10;    }&#10;  }&#10;}" />
-            <marker date="1523926323537" expanded="true" signature="155:176" ph="CurrentAppUserContact...CurrentAppUserContact" />
-            <marker date="1523926323537" expanded="true" signature="176:412" ph="{...}" />
-            <marker date="1523926323537" expanded="true" signature="179:200" ph="currentAppUserContact...currentAppUserContact" />
-            <marker date="1523926323537" expanded="true" signature="179:410" ph="currentAppUserContact...{&#10;    contact {&#10;      id&#10;      lastName&#10;      firstName&#10;      email&#10;      organization: organizationByOrganizationId {&#10;        id&#10;        name&#10;        externalId&#10;        appTenantId&#10;      }&#10;    }&#10;  }" />
-            <marker date="1523926323537" expanded="true" signature="200:210" ph="(...)" />
-            <marker date="1523926323537" expanded="true" signature="201:206" ph="input...input" />
-            <marker date="1523926323537" expanded="true" signature="201:209" ph="input...{}" />
-            <marker date="1523926323537" expanded="true" signature="207:209" ph="{...}" />
-            <marker date="1523926323537" expanded="true" signature="211:410" ph="{...}" />
-            <marker date="1523926323537" expanded="true" signature="217:224" ph="contact...contact" />
-            <marker date="1523926323537" expanded="true" signature="217:406" ph="contact...{&#10;      id&#10;      lastName&#10;      firstName&#10;      email&#10;      organization: organizationByOrganizationId {&#10;        id&#10;        name&#10;        externalId&#10;        appTenantId&#10;      }&#10;    }" />
-            <marker date="1523926323537" expanded="true" signature="225:406" ph="{...}" />
-            <marker date="1523926323537" expanded="true" signature="233:235" ph="id...id" />
-            <marker date="1523926323537" expanded="true" signature="242:250" ph="lastName...lastName" />
-            <marker date="1523926323537" expanded="true" signature="257:266" ph="firstName...firstName" />
-            <marker date="1523926323537" expanded="true" signature="273:278" ph="email...email" />
-            <marker date="1523926323537" expanded="true" signature="299:327" ph="organizationByOrganizationId...organizationByOrganizationId" />
-            <marker date="1523926323537" expanded="true" signature="299:400" ph="organizationByOrganizationId...{&#10;        id&#10;        name&#10;        externalId&#10;        appTenantId&#10;      }" />
-            <marker date="1523926323537" expanded="true" signature="328:400" ph="{...}" />
-            <marker date="1523926323537" expanded="true" signature="338:340" ph="id...id" />
-            <marker date="1523926323537" expanded="true" signature="349:353" ph="name...name" />
-            <marker date="1523926323537" expanded="true" signature="362:372" ph="externalId...externalId" />
-            <marker date="1523926323537" expanded="true" signature="381:392" ph="appTenantId...appTenantId" />
+            <marker date="1523934981805" expanded="true" signature="1881:1895" ph="{...}" />
+            <marker date="1523934981805" expanded="true" signature="2953:3083" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cli/gql/mutation/currentAppUserContact/currentAppUserContact.graphql">
+    <entry file="file://$PROJECT_DIR$/cli/test/org/02-0010-build-app-tenant-organization-spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cli/test/org/02-0030-build-contact-spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cli/test/org/meh.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/cmd/server">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="98" lean-forward="false" selection-start-line="3" selection-start-column="98" selection-end-line="3" selection-end-column="98" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cli/test/org/02-0005-get-current-app-user-contact-spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+        <state relative-caret-position="777">
+          <caret line="129" column="4" lean-forward="false" selection-start-line="129" selection-start-column="4" selection-end-line="129" selection-end-column="4" />
           <folding />
         </state>
       </provider>

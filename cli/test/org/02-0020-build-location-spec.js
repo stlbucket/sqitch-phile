@@ -1,8 +1,11 @@
 const expect = require('chai').expect
 const clog = require('fbkt-clog')
 const apolloClient = require('../../apolloClient')
-const buildLocation = require('../../gql/mutation/buildLocation')
-const allLocations = require('../../gql/query/allLocations')
+const readFileSync = require('fs').readFileSync
+const buildLocation = readFileSync(__dirname + '/../../gql/org/mutation/buildLocation.graphql', 'utf8')
+const allLocations = readFileSync(__dirname + '/../../gql/org/query/allLocations.graphql', 'utf8')
+
+// const allLocations = require('../../gql/query/allLocations')
 
 describe('org', function(done){
   it('should build a location', function (done) {
@@ -12,15 +15,19 @@ describe('org', function(done){
       password: 'badpassword'
     })
 
-    buildLocation({
-      name: 'Test Tenant Org Location'
-      , address1: 'blah'
-      , address2: 'glarn'
-      , city: 'yon'
-      , state: 'agitated'
-      , zip: 'none'
-      , lat: ''
-      , lon: ''
+    apolloClient.mutate({
+      mutation: buildLocation,
+      variables: {
+        name: 'Test Tenant Org Location'
+        , address1: 'blah'
+        , address2: 'glarn'
+        , city: 'yon'
+        , state: 'agitated'
+        , zip: 'none'
+        , lat: ''
+        , lon: ''
+      },
+      resultPath: 'buildLocation.location'
     })
       .then(location => {
         // clog('location', location)
@@ -40,21 +47,28 @@ describe('org', function(done){
       password: 'badpassword'
     })
 
-    buildLocation({
-      name: 'Test Tenant Org 1 Location'
-      , address1: 'blahs'
-      , address2: 'glarns'
-      , city: 'yons'
-      , state: 'agitateds'
-      , zip: 'nones'
-      , lat: ''
-      , lon: ''
+    apolloClient.mutate({
+      mutation: buildLocation,
+      variables: {
+        name: 'Test Tenant Org 1 Location'
+        , address1: 'blahs'
+        , address2: 'glarns'
+        , city: 'yons'
+        , state: 'agitateds'
+        , zip: 'nones'
+        , lat: ''
+        , lon: ''
+      },
+      resultPath: 'buildLocation.location'
     })
       .then(location => {
         // clog('location', location)
         expect(location).to.be.an('object')
         expect(location.name).to.equal('Test Tenant Org 1 Location')
-        return allLocations()
+        return apolloClient.query({
+          query: allLocations,
+          resultPath: 'allLocations.nodes'
+        })
       })
       .then(locations => {
         expect(locations.length).to.equal(1)
@@ -73,7 +87,10 @@ describe('org', function(done){
       password: 'badpassword'
     })
 
-    allLocations()
+    apolloClient.query({
+      query: allLocations,
+      resultPath: 'allLocations.nodes'
+    })
       .then(locations => {
         expect(locations.length).to.equal(2)
         done()

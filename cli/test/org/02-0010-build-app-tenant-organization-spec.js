@@ -1,8 +1,9 @@
 const expect = require('chai').expect
 const clog = require('fbkt-clog')
 const apolloClient = require('../../apolloClient')
-const buildAppTenant = require('../../gql/mutation/buildAppTenantOrganization')
-const allOrganizations = require('../../gql/query/allOrganizations')
+const readFileSync = require('fs').readFileSync
+const buildAppTenant = readFileSync(__dirname + '/../../gql/org/mutation/buildAppTenantOrganization.graphql', 'utf8')
+const allOrganizations = readFileSync(__dirname + '/../../gql/org/query/allOrganizations.graphql', 'utf8')
 
 describe('org', function(done){
   it('should build a new app tenant organization', function (done) {
@@ -12,12 +13,16 @@ describe('org', function(done){
       password: 'badpassword'
     })
 
-    buildAppTenant({
-      name: 'Test Tenant Org'
-      , identifier: 'TestTenantOrg'
-      , primaryContactFirstName: 'test'
-      , primaryContactLastName: 'tester'
-      , primaryContactEmail: 'testy.mctesterson@testyorg.org'
+    apolloClient.mutate({
+      mutation: buildAppTenant,
+      variables: {
+        name: 'Test Tenant Org'
+        , identifier: 'TestTenantOrg'
+        , primaryContactFirstName: 'test'
+        , primaryContactLastName: 'tester'
+        , primaryContactEmail: 'testy.mctesterson@testyorg.org'
+      },
+      resultPath: 'buildTenantOrganization.organization'
     })
       .then(organization => {
         expect(organization).to.be.an('object')
@@ -32,7 +37,10 @@ describe('org', function(done){
       })
       .then(client => {
         expect(client).to.be.an('object')
-        return allOrganizations()
+        return apolloClient.query({
+          query: allOrganizations,
+          resultPath: 'allOrganizations.nodes'
+        })
       })
       .then(organizations => {
         expect(organizations.length).to.equal(1)
@@ -52,7 +60,10 @@ describe('org', function(done){
       password: 'badpassword'
     })
 
-    allOrganizations()
+    apolloClient.query({
+      query: allOrganizations,
+      resultPath: 'allOrganizations.nodes'
+    })
       .then(organizations => {
         expect(organizations.length).to.equal(1)
         expect(organizations[0].name).to.equal('Test Tenant Org')
@@ -70,12 +81,16 @@ describe('org', function(done){
       password: 'badpassword'
     })
 
-    buildAppTenant({
-      name: 'Test Tenant Org 1'
-      , identifier: 'TestTenantOrg1'
-      , primaryContactFirstName: 'test'
-      , primaryContactLastName: 'tester'
-      , primaryContactEmail: 'peter.testaroo@testyorg.org'
+    apolloClient.mutate({
+      mutation: buildAppTenant,
+      variables: {
+        name: 'Test Tenant Org 1'
+        , identifier: 'TestTenantOrg1'
+        , primaryContactFirstName: 'test'
+        , primaryContactLastName: 'tester'
+        , primaryContactEmail: 'peter.testaroo@testyorg.org'
+      },
+      resultPath: 'buildTenantOrganization.organization'
     })
       .then(organization => {
         expect(organization).to.be.an('object')
@@ -90,7 +105,10 @@ describe('org', function(done){
       })
       .then(client => {
         expect(client).to.be.an('object')
-        return allOrganizations()
+        return apolloClient.query({
+          query: allOrganizations,
+          resultPath: 'allOrganizations.nodes'
+        })
       })
       .then(organizations => {
         expect(organizations.length).to.equal(1)
@@ -109,7 +127,10 @@ describe('org', function(done){
       password: 'badpassword'
     })
 
-    allOrganizations()
+    apolloClient.query({
+      query: allOrganizations,
+      resultPath: 'allOrganizations.nodes'
+    })
       .then(organizations => {
         expect(organizations.length).to.equal(2)
         done()

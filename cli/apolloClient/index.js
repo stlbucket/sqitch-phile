@@ -109,8 +109,44 @@ function getClient () {
   }
 }
 
+function mutate (options) {
+  return getClient()
+    .then(client => {
+      return client.mutate({
+        mutation: gql(options.mutation),
+        variables: options.variables || {}
+      })
+    })
+    .then(result => {
+      return options.resultPath.split('.').reduce(
+        (acc, property) => {
+          return acc[property]
+        }, result.data
+      )
+    })
+}
+
+function query (options) {
+  return getClient()
+    .then(client => {
+      return client.query({
+        query: gql(options.query),
+        variables: options.variables || {}
+      })
+    })
+    .then(result => {
+      return options.resultPath.split('.').reduce(
+        (acc, property) => {
+          return acc[property]
+        }, result.data
+      )
+    })
+}
+
 module.exports = {
   connect: getClient,
   setGraphqlEndpoint: setGraphqlEndpoint,
-  setCredentials: setCredentials
+  setCredentials: setCredentials,
+  mutate: mutate,
+  query: query
 }
