@@ -20,7 +20,7 @@ query {
   }
 }`
 
-function allLocations(variables){
+function doGraphql(variables){
   return apolloClient.connect()
     .then(client => {
       return client.query({
@@ -33,4 +33,4 @@ function allLocations(variables){
     })
 }
 
-module.exports = allLocations
+module.exports = doGraphql

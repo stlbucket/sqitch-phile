@@ -2,17 +2,17 @@
 
 BEGIN;
 
-SELECT has_function_privilege('
-  org_fn.build_location(
-    text
-   ,text
-   ,text
-   ,text
-   ,text
-   ,text
-   ,text
-   ,text
-  )
-', 'execute');
+  SELECT has_function_privilege('
+    org_fn.build_location(
+      text
+     ,text
+     ,text
+     ,text
+     ,text
+     ,text
+     ,text
+     ,text
+    )
+  ', 'execute');
 
 ROLLBACK;

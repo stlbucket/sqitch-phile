@@ -3,7 +3,7 @@ const apolloClient = require('../../../apolloClient')
 const gql = require('graphql-tag')
 
 const mutation = gql`
-mutation {
+mutation CurrentAppUserContact{
 	currentAppUserContact(input:{}) {
     contact {
       id

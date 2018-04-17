@@ -20,7 +20,7 @@ mutation BuildAppTenant(
 }
 `
 
-function buildAppTenant(variables){
+function doGraphql(variables){
   return apolloClient.connect()
     .then(client => {
       return client.mutate({
@@ -33,4 +33,4 @@ function buildAppTenant(variables){
     })
 }
 
-module.exports = buildAppTenant
+module.exports = doGraphql

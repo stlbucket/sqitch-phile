@@ -13,7 +13,7 @@ query {
   }
 }`
 
-function allOrganizations(variables){
+function doGraphql(variables){
   return apolloClient.connect()
     .then(client => {
       return client.query({
@@ -26,4 +26,4 @@ function allOrganizations(variables){
     })
 }
 
-module.exports = allOrganizations
+module.exports = doGraphql

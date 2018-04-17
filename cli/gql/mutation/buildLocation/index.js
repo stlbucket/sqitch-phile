@@ -38,7 +38,7 @@ mutation BuildLocation(
 }
 `
 
-function buildLocation(variables){
+function doGraphql(variables){
   return apolloClient.connect()
     .then(client => {
       return client.mutate({
@@ -51,4 +51,4 @@ function buildLocation(variables){
     })
 }
 
-module.exports = buildLocation
+module.exports = doGraphql
