@@ -41,16 +41,7 @@ begin
     ,_lat
     ,_lon
     ,_app_user.app_tenant_id
-  ON CONFLICT(app_tenant_id, name)
-  DO UPDATE
-  SET
-    address1 = _address1
-    ,address2 = _address2
-    ,city = _city
-    ,state = _state
-    ,zip = _zip
-    ,lat = _lat
-    ,lon = _lon
+
   RETURNING *
   INTO _location
   ;

@@ -17,7 +17,6 @@ BEGIN;
     zip text,
     lat text,
     lon text,
-    CONSTRAINT uq_location_app_tenant_and_name UNIQUE (app_tenant_id, name),
     CONSTRAINT uq_location_app_tenant_and_external_id UNIQUE (app_tenant_id, external_id),
     CONSTRAINT pk_location PRIMARY KEY (id)
   );

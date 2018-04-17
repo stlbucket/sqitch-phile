@@ -71,8 +71,12 @@ describe('org', function(done){
         })
       })
       .then(locations => {
-        expect(locations.length).to.equal(1)
-        expect(locations[0].name).to.equal('Test Tenant Org 1 Location')
+        const appTenantIds = locations.reduce(
+          (acc, location) => {
+            return acc.includes(location.appTenantId) ? acc : acc.concat([location.appTenantId])
+          }, []
+        )
+        expect(appTenantIds.length).to.equal(1)
         done()
       })
       .catch(error => {
@@ -92,7 +96,12 @@ describe('org', function(done){
       resultPath: 'allLocations.nodes'
     })
       .then(locations => {
-        expect(locations.length).to.equal(2)
+        const appTenantIds = locations.reduce(
+          (acc, location) => {
+            return acc.includes(location.appTenantId) ? acc : acc.concat([location.appTenantId])
+          }, []
+        )
+        expect(appTenantIds.length).to.equal(2)
         done()
       })
       .catch(error => {
