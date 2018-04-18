@@ -14,6 +14,7 @@ app.use(postgraphile(
     ,jwtSecret: 'SUPERSECRET'
     ,jwtPgTypeIdentifier: 'auth.jwt_token'
     ,extendedErrors: ['hint', 'detail', 'errcode']
+    ,disableDefaultMutations: true
   }
 ));
 
