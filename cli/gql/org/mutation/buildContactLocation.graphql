@@ -1,4 +1,5 @@
-mutation BuildLocation(
+mutation BuildContactLocation(
+    $contactId: UUID!
     $name: String!
     $address1: String!
     $address2: String!
@@ -8,7 +9,8 @@ mutation BuildLocation(
     $lat: String!
     $lon: String!
   ) {
-  buildLocation(input: {
+  buildContactLocation(input: {
+    _contactId: $contactId
     _name: $name
     _address1: $address1
     _address2: $address2
@@ -18,16 +20,22 @@ mutation BuildLocation(
     _lat: $lat
     _lon: $lon
   }) {
-    location {
+    contact {
       id
-      name
-      address1
-      address2
-      city
-      state
-      zip
-      lat
-      lon
+      firstName
+      lastName
+      email
+      location: locationByLocationId {
+        id
+        name
+        address1
+        address2
+        city
+        state
+        zip
+        lat
+        lon
+      }
     }
   }
 }

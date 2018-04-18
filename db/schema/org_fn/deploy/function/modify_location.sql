@@ -34,7 +34,7 @@ begin
 
   UPDATE org.location
   SET
-    ,name = _name
+    name = _name
     ,address1 = _address1
     ,address2 = _address2
     ,city = _city
@@ -42,6 +42,7 @@ begin
     ,zip = _zip
     ,lat = _lat
     ,lon = _lon
+  WHERE id = _location.id
   RETURNING *
   INTO _location
   ;

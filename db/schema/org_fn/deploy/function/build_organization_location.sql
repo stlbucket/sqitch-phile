@@ -1,10 +1,10 @@
--- Deploy org:function/build_contact_location to pg
--- requires: structure/contact
+-- Deploy org:function/build_organization_location to pg
+-- requires: structure/organization
 
 BEGIN;
 
-  create function org_fn.build_contact_location(
-    _contact_id uuid
+  create function org_fn.build_organization_location(
+    _organization_id uuid
     ,_name text
     ,_address1 text
     ,_address2 text
@@ -14,26 +14,26 @@ BEGIN;
     ,_lat text
     ,_lon text
   )
-  returns org.contact as $$
+  returns org.organization as $$
   declare
     _app_user auth.app_user;
-    _contact org.contact;
+    _organization org.organization;
     _location org.location;
   begin
     _app_user := auth_fn.current_app_user();
     
     SELECT *
-    INTO _contact
-    FROM org.contact c
-    WHERE id = _contact_id
-    AND auth_fn.app_user_has_access(c.app_tenant_id)
+    INTO _organization
+    FROM org.organization o
+    WHERE id = _organization_id
+    AND auth_fn.app_user_has_access(o.app_tenant_id)
     ;
 
-    IF _contact.id IS NULL THEN
-      RAISE EXCEPTION 'No contact for id: %', _contact_id;
+    IF _organization.id IS NULL THEN
+      RAISE EXCEPTION 'No organization for id: %', _organization_id;
     END IF;
-
-    IF _contact.location_id IS NULL THEN
+    
+    IF _organization.location_id IS NULL THEN
       _location := org_fn.build_location(
         _name
         ,_address1
@@ -45,15 +45,15 @@ BEGIN;
         ,_lon
       );
 
-      UPDATE org.contact c
+      UPDATE org.organization
       SET location_id = _location.id
-      WHERE id = _contact_id
+      WHERE id = _organization_id
       RETURNING *
-      INTO _contact
+      INTO _organization
       ;
     ELSE
       _location := org_fn.modify_location(
-        _contact.location_id
+        _organization.location_id
         ,_name
         ,_address1
         ,_address2
@@ -66,12 +66,12 @@ BEGIN;
       ;
     END IF;
 
-    RETURN _contact;
+    RETURN _organization;
 
   end;
   $$ language plpgsql strict security definer;
 
-  GRANT EXECUTE ON FUNCTION org_fn.build_contact_location(
+  GRANT EXECUTE ON FUNCTION org_fn.build_organization_location(
     uuid
     ,text
     ,text

@@ -9,3 +9,5 @@ function/build_organization [org:structure/organization] 2018-04-12T01:37:12Z Ke
 function/build_contact [org:structure/contact] 2018-04-12T01:37:30Z Kevin Burkett <stlbucket@gmail.com> # creates a contact
 function/build_tenant_organization [function/build_organization] 2018-04-15T15:37:39Z Kevin Burkett <stlbucket@gmail.com> # build a tenant organization
 function/build_contact_location [structure/schema] 2018-04-17T09:52:29Z Kevin Burkett <stlbucket@gmail.com> # build location for a contact
+function/build_organization_location [structure/schema] 2018-04-18T21:12:04Z Kevin Burkett <stlbucket@gmail.com> # build default location for organization
+function/modify_location [structure/schema] 2018-04-18T21:27:55Z Kevin Burkett <stlbucket@gmail.com> # modify a location

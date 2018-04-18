@@ -19,5 +19,3 @@ do
   echo "DEPLOYING PACKAGE ------------------------------------------------------------" $i
   (cd ./"$i"/ && sqitch deploy)
 done
-
-./cmd/server

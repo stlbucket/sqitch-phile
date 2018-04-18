@@ -51,15 +51,15 @@ begin
 end;
 $$ language plpgsql strict security definer;
 
-GRANT EXECUTE ON FUNCTION org_fn.build_location(
-  text
-  ,text
-  ,text
-  ,text
-  ,text
-  ,text
-  ,text
-  ,text
-) TO app_user;
+--GRANT EXECUTE ON FUNCTION org_fn.build_location(
+--  text
+--  ,text
+--  ,text
+--  ,text
+--  ,text
+--  ,text
+--  ,text
+--  ,text
+--) TO app_user;
 
 COMMIT;
