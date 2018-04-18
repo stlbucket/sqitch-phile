@@ -45,3 +45,15 @@ select
   ,external_id
   ,app_tenant_id
 from org.location;
+
+
+\echo -----------------------------------     org.facility
+\echo ----------------------------------------------------
+select
+  id
+  ,name
+  ,external_id
+  ,organization_id
+  ,location_id
+  ,app_tenant_id
+from org.facility;

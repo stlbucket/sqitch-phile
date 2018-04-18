@@ -7,7 +7,7 @@ const allOrganizations = readFileSync(__dirname + '/../../gql/org/query/allOrgan
 const buildOrganizationLocation = readFileSync(__dirname + '/../../gql/org/mutation/buildOrganizationLocation.graphql', 'utf8')
 const currentAppUserContact = readFileSync(__dirname + '/../../gql/org/mutation/currentAppUserContact.graphql', 'utf8')
 
-describe('org', function(done){
+describe('org-app-tenant-org', function(done){
   it('should build a new app tenant organization', function (done) {
     apolloClient.setGraphqlEndpoint('http://localhost:5000/graphql')
     apolloClient.setCredentials({
@@ -18,8 +18,8 @@ describe('org', function(done){
     apolloClient.mutate({
       mutation: buildAppTenant,
       variables: {
-        name: 'Test Tenant Org'
-        , identifier: 'TestTenantOrg'
+        name: 'Test Tenant Org 1'
+        , identifier: 'TestTenantOrg1'
         , primaryContactFirstName: 'test'
         , primaryContactLastName: 'tester'
         , primaryContactEmail: 'testy.mctesterson@testyorg.org'
@@ -28,7 +28,7 @@ describe('org', function(done){
     })
       .then(organization => {
         expect(organization).to.be.an('object')
-        expect(organization.name).to.equal('Test Tenant Org')
+        expect(organization.name).to.equal('Test Tenant Org 1')
 
         apolloClient.setCredentials({
           username: 'testy.mctesterson@testyorg.org',
@@ -46,7 +46,7 @@ describe('org', function(done){
       })
       .then(organizations => {
         expect(organizations.length).to.equal(1)
-        expect(organizations[0].name).to.equal('Test Tenant Org')
+        expect(organizations[0].name).to.equal('Test Tenant Org 1')
         done()
       })
       .catch(error => {
@@ -87,7 +87,7 @@ describe('org', function(done){
       })
       .then(organizationLocation => {
         expect(organizationLocation).to.be.an('object')
-        expect(organizationLocation.name).to.equal('Test Tenant Org')
+        expect(organizationLocation.name).to.equal('Test Tenant Org 1')
         expect(organizationLocation.location).to.be.an('object')
         expect(organizationLocation.location.name).to.equal('Test organization location')
         done()
@@ -107,8 +107,8 @@ describe('org', function(done){
     apolloClient.mutate({
       mutation: buildAppTenant,
       variables: {
-        name: 'Test Tenant Org 1'
-        , identifier: 'TestTenantOrg1'
+        name: 'Test Tenant Org 2'
+        , identifier: 'TestTenantOrg2'
         , primaryContactFirstName: 'test'
         , primaryContactLastName: 'tester'
         , primaryContactEmail: 'peter.testaroo@testyorg.org'
@@ -117,7 +117,7 @@ describe('org', function(done){
     })
       .then(organization => {
         expect(organization).to.be.an('object')
-        expect(organization.name).to.equal('Test Tenant Org 1')
+        expect(organization.name).to.equal('Test Tenant Org 2')
 
         apolloClient.setCredentials({
           username: 'peter.testaroo@testyorg.org',
@@ -135,7 +135,7 @@ describe('org', function(done){
       })
       .then(organizations => {
         expect(organizations.length).to.equal(1)
-        expect(organizations[0].name).to.equal('Test Tenant Org 1')
+        expect(organizations[0].name).to.equal('Test Tenant Org 2')
         done()
       })
       .catch(error => {
@@ -156,7 +156,7 @@ describe('org', function(done){
     })
       .then(organizations => {
         expect(organizations.length).to.equal(1)
-        expect(organizations[0].name).to.equal('Test Tenant Org')
+        expect(organizations[0].name).to.equal('Test Tenant Org 1')
         done()
       })
       .catch(error => {

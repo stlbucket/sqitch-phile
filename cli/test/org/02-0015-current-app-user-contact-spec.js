@@ -4,7 +4,7 @@ const apolloClient = require('../../apolloClient')
 const readFileSync = require('fs').readFileSync
 const mutation = readFileSync(__dirname + '/../../gql/org/mutation/currentAppUserContact.graphql', 'utf8')
 
-describe('org', function(done){
+describe('org-current-app-user-contact', function(done){
 
   it('should get the current user contact info', function (done) {
     apolloClient.setGraphqlEndpoint('http://localhost:5000/graphql')

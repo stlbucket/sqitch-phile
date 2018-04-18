@@ -7,7 +7,7 @@ const allLocations = readFileSync(__dirname + '/../../gql/org/query/allLocations
 
 // const allLocations = require('../../gql/query/allLocations')
 
-describe('org', function(done){
+describe.skip('org-view-location', function(done){
   // it('should build a location', function (done) {
   //   apolloClient.setGraphqlEndpoint('http://localhost:5000/graphql')
   //   apolloClient.setCredentials({
@@ -18,7 +18,7 @@ describe('org', function(done){
   //   apolloClient.mutate({
   //     mutation: buildLocation,
   //     variables: {
-  //       name: 'Test Tenant Org Location'
+  //       name: 'Test Tenant Org 1 1Location'
   //       , address1: 'blah'
   //       , address2: 'glarn'
   //       , city: 'yon'
@@ -32,7 +32,7 @@ describe('org', function(done){
   //     .then(location => {
   //       // clog('location', location)
   //       expect(location).to.be.an('object')
-  //       expect(location.name).to.equal('Test Tenant Org Location')
+  //       expect(location.name).to.equal('Test Tenant Org 1 1Location')
   //       done()
   //     })
   //     .catch(error => {
@@ -50,7 +50,7 @@ describe('org', function(done){
   //   apolloClient.mutate({
   //     mutation: buildLocation,
   //     variables: {
-  //       name: 'Test Tenant Org 1 Location'
+  //       name: 'Test Tenant Org 2 Location'
   //       , address1: 'blahs'
   //       , address2: 'glarns'
   //       , city: 'yons'
@@ -64,7 +64,7 @@ describe('org', function(done){
   //     .then(location => {
   //       // clog('location', location)
   //       expect(location).to.be.an('object')
-  //       expect(location.name).to.equal('Test Tenant Org 1 Location')
+  //       expect(location.name).to.equal('Test Tenant Org 2 Location')
   //       return apolloClient.query({
   //         query: allLocations,
   //         resultPath: 'allLocations.nodes'

@@ -11,3 +11,5 @@ function/build_tenant_organization [function/build_organization] 2018-04-15T15:3
 function/build_contact_location [structure/schema] 2018-04-17T09:52:29Z Kevin Burkett <stlbucket@gmail.com> # build location for a contact
 function/build_organization_location [structure/schema] 2018-04-18T21:12:04Z Kevin Burkett <stlbucket@gmail.com> # build default location for organization
 function/modify_location [structure/schema] 2018-04-18T21:27:55Z Kevin Burkett <stlbucket@gmail.com> # modify a location
+function/build_facility [structure/schema] 2018-04-18T22:20:28Z Kevin Burkett <stlbucket@gmail.com> # build a facility
+function/build_facility_location [structure/schema] 2018-04-18T22:32:50Z Kevin Burkett <stlbucket@gmail.com> # build location for a facility

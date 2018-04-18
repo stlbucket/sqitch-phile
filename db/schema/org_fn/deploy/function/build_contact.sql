@@ -62,18 +62,6 @@ BEGIN;
         ,_organization.app_tenant_id
       RETURNING *
       INTO _contact;
-    ELSE
-      UPDATE org.contact SET
-        first_name = _first_name
-        ,last_name = _last_name
-        ,email = _email
-        ,cell_phone = _cell_phone
-        ,office_phone = _office_phone
-        ,title = _title
-        ,nickname = _nickname
-      WHERE id = _contact.id
-      RETURNING *
-      INTO _contact;
     END IF;
 
     RETURN _contact;

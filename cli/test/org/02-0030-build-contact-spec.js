@@ -8,7 +8,7 @@ const buildContactLocation = readFileSync(__dirname + '/../../gql/org/mutation/b
 //
 // // const allLocations = require('../../gql/query/allLocations')
 //
-describe('org', function(done){
+describe('org-contact', function(done){
 
   it('should build a new contact for current user organization', function (done) {
     apolloClient.setGraphqlEndpoint('http://localhost:5000/graphql')
