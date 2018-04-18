@@ -3,11 +3,14 @@
 
 BEGIN;
 
-CREATE TABLE org.config_org (
-  id uuid UNIQUE NOT NULL DEFAULT uuid_generate_v1(),
-  key text,
-  value text,
-  CONSTRAINT pk_config_org PRIMARY KEY (id)
-);
+  CREATE TABLE org.config_org (
+    id uuid UNIQUE NOT NULL DEFAULT uuid_generate_v1(),
+    key text,
+    value text,
+    CONSTRAINT pk_config_org PRIMARY KEY (id)
+  );
+
+  GRANT select ON TABLE org.config_org TO app_super_admin;
+
 
 COMMIT;
