@@ -65,3 +65,21 @@ select
   ,app_tenant_id
   ,current_value
 from ex.counter;
+
+\echo -----------------------------------     ex.counter_evt
+\echo ----------------------------------------------------
+select
+  id
+  ,app_tenant_id
+  ,current_value
+from ex.counter_evt;
+
+
+\echo -----------------------------------     evt.evt
+\echo ----------------------------------------------------
+select
+  id
+  ,name
+  ,params
+  ,result
+from evt.evt;

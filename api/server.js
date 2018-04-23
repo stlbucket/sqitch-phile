@@ -7,7 +7,7 @@ const app = express();
 
 app.use(postgraphile(
   "postgres://localhost/phile"
-  ,["auth" ,"auth_fn","org","org_fn","ex"]
+  ,["auth" ,"auth_fn","org","org_fn","ex","ex_fn"]
   ,{
     dynamicJson: true
     ,pgDefaultRole: 'app_anonymous'

@@ -4,4 +4,4 @@
 
 structure/schema [evt:structure/schema] 2018-04-23T01:00:45Z Kevin Burkett <stlbucket@gmail.com> # schema for ex
 structure/counter [structure/schema] 2018-04-23T01:01:39Z Kevin Burkett <stlbucket@gmail.com> # counter example
-function/counter_up [structure/schema structure/counter] 2018-04-23T01:02:51Z Kevin Burkett <stlbucket@gmail.com> # add 1 to the ex
+structure/counter_evt [structure/schema] 2018-04-23T13:20:06Z Kevin Burkett <stlbucket@gmail.com> # event based counters
