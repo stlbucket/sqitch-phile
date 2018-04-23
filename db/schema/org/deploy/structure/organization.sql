@@ -6,6 +6,7 @@ BEGIN;
   CREATE TABLE org.organization (
     id uuid UNIQUE NOT NULL DEFAULT uuid_generate_v1(),
     app_tenant_id uuid NOT NULL,
+    actual_app_tenant_id uuid NULL UNIQUE,
     created_at timestamp NOT NULL DEFAULT current_timestamp,
     updated_at timestamp NOT NULL,
     external_id text,
@@ -19,6 +20,8 @@ BEGIN;
   ALTER TABLE org.organization ADD CONSTRAINT fk_organization_location FOREIGN KEY ( location_id ) REFERENCES org.location( id );
   --||--
   ALTER TABLE org.organization ADD CONSTRAINT fk_organization_app_tenant FOREIGN KEY ( app_tenant_id ) REFERENCES auth.app_tenant( id );
+  --||--
+  ALTER TABLE org.organization ADD CONSTRAINT fk_organization_actual_app_tenant FOREIGN KEY ( actual_app_tenant_id ) REFERENCES auth.app_tenant( id );
 
 
   --||--

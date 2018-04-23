@@ -64,10 +64,12 @@ begin
       name
       ,external_id
       ,app_tenant_id
+      ,actual_app_tenant_id
     )
     SELECT
       _name
       ,_identifier
+      ,_app_tenant.id
       ,_app_tenant.id
     RETURNING *
     INTO _organization;
