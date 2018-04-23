@@ -10,28 +10,11 @@ BEGIN;
   BEGIN
     _app_user := auth_fn.current_app_user();
 
-    SELECT *
-    INTO _counter
-    FROM ex.counter
-    WHERE app_tenant_id = _app_user.app_tenant_id;
-
-    IF _counter.id IS NULL THEN
-      INSERT INTO ex.counter(
-        app_tenant_id
-        ,current_value
-      )
-      SELECT
-        _app_user.app_tenant_id
-        ,1
-      RETURNING *
-      INTO _counter;
-    ELSE
-      UPDATE ex.counter
-      SET current_value = current_value + 1
-      WHERE id = _counter.id
-      RETURNING *
-      INTO _counter;
-    END IF;
+    UPDATE ex.counter
+    SET current_value = current_value + 1
+    WHERE id = _counter.id
+    RETURNING *
+    INTO _counter;
 
     RETURN _counter;
   END;

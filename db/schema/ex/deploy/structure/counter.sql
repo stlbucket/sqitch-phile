@@ -31,4 +31,28 @@ BEGIN;
   --||--
   GRANT select ON TABLE ex.counter TO app_user;
 
+  --||--
+  alter table ex.counter enable row level security;
+  --||--
+  create policy select_counter on ex.counter for select
+    using (auth_fn.app_user_has_access(app_tenant_id) = true);
+
+
+  --||--
+  CREATE FUNCTION ex.fn_init_tenant_counter() RETURNS trigger AS $$
+  BEGIN
+    INSERT INTO ex.counter(
+      app_tenant_id
+    )
+    SELECT NEW.id;
+
+    RETURN NEW;
+  END; $$ LANGUAGE plpgsql;
+  --||--
+  CREATE TRIGGER tg_init_tenant_counter
+    AFTER INSERT ON auth.app_tenant
+    FOR EACH ROW
+    EXECUTE PROCEDURE ex.fn_init_tenant_counter();
+  --||--
+
 COMMIT;
