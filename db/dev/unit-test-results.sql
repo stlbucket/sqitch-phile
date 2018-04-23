@@ -57,3 +57,11 @@ select
   ,location_id
   ,app_tenant_id
 from org.facility;
+
+\echo -----------------------------------     ex.counter
+\echo ----------------------------------------------------
+select
+  id
+  ,app_tenant_id
+  ,current_value
+from ex.counter;

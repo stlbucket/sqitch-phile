@@ -2,6 +2,6 @@
 
 BEGIN;
 
-SELECT has_function_privilege('auth_fn.build_app_tenant(text, text)', 'execute');
+  SELECT has_function_privilege('auth_fn.build_app_tenant(text, text)', 'execute');
 
 ROLLBACK;
