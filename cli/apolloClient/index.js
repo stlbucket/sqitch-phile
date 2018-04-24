@@ -118,6 +118,7 @@ function mutate (options) {
       })
     })
     .then(result => {
+      // clog('result', result)
       return options.resultPath.split('.').reduce(
         (acc, property) => {
           return acc[property]

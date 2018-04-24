@@ -9,6 +9,7 @@ BEGIN;
     created_at timestamp NOT NULL DEFAULT current_timestamp,
     updated_at timestamp NOT NULL,
     current_value integer NOT NULL DEFAULT 0,
+    error_threshold integer NOT NULL DEFAULT 5,
     CONSTRAINT pk_counter_evt PRIMARY KEY (id)
   );
   --||--

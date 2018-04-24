@@ -83,3 +83,11 @@ select
   ,params
   ,result
 from evt.evt;
+
+\echo -----------------------------------     evt.evt
+\echo ----------------------------------------------------
+select
+  app_tenant_name
+  ,event_name
+  ,status
+from evt_fn.vw_evt_processing_status;
